@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人博客网站如何使用第三方去广告的评论插件_百度SEO</title>
+<meta name="keywords" content="个人博客,评论插件" />
+<meta name="description" content="使用第三方评论插件的好处就是不用存放在本地数据库，不用担心注册机注册一堆无用的账号信息，还能有效的防止一些垃圾评论和留言。当然如果你技术过硬的话，自己写一个评论留言插" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../../skin/menhu/css/base.css" rel="stylesheet">
+<link href="../../skin/menhu/css/m.css" rel="stylesheet">
+<script src="../../skin/menhu/js/jquery-1.8.3.min.js" ></script>
+<script src="../../skin/menhu/js/hc-sticky.js"></script>
+<script src="../../skin/menhu/js/aside-sticky.js"></script>
+<script src="../../skin/menhu/js/main.js"></script>
+<script src="../../skin/menhu/js/side-tab.js"></script>
+<!--[if lt IE 9]>
+<script src="/skin/menhu/js/modernizr.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://menhu.ip3q.com/e/data/js/ajax.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo-section box">
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="logo"><a href="../../index.html"><img src="../../skin/menhu/images/logo.png">      <h2 class="logo-title">青于蓝</h2>
+      <p class="logo-text">排名技术建站，让你对手追赶</p>
+      </a> </div>
+  </div>
+  <div class="clear"></div>
+  <div class="topnav">
+         <h2><a href="../../index.html">青于蓝</a></h2>
+    <nav>
+      <ul id="starlist">
+        <li><a href="../../index.html">网站首页</a></li>
+    <li class="menu"><a href="../../blog/index.html" >个人博客</a>
+  <ul class="sub">  
+      <li><a href="../../blog/diary/index.html" >博客日记</a></li>
+<li><a href="../../blog/life/index.html" >程序人生</a></li>
+<li><a href="../../blog/design/index.html" >设计心得</a></li>
+<li><a href="../../blog/plan/index.html" >人生规划</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../case/index.html" >设计案例</a>
+  <ul class="sub">  
+      <li><a href="../../case/personal/index.html" >个人网站</a></li>
+<li><a href="../../case/enterprise/index.html" >企业网站</a></li>
+<li><a href="../../case/unit/index.html" >事业单位</a></li>
+<li><a href="../../case/shop/index.html" >网购商城</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../index.html" >SEO优化</a>
+  <ul class="sub">  
+      <li><a href="index.html" >百度SEO</a></li>
+<li><a href="../shuyu/index.html" >SEO专业术语</a></li>
+<li><a href="../problem/index.html" >SEO常见问题</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../course/index.html" >视频教程</a>
+  <ul class="sub">  
+      <li><a href="../../course/web/index.html" >前端设计</a></li>
+<li><a href="../../course/js/index.html" >JS教程</a></li>
+<li><a href="../../course/cms/index.html" >CMS教程</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../marketing/index.html" >网络营销</a>
+  <ul class="sub">  
+      <li><a href="../../marketing/extension/index.html" >网络推广</a></li>
+<li><a href="../../marketing/brand/index.html" >品牌营销</a></li>
+<li><a href="../../marketing/consciousness/index.html" >意识思维</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../download/index.html" >资源下载</a>
+  <ul class="sub">  
+      <li><a href="../../download/html/index.html" >网页制作</a></li>
+<li><a href="../../download/ftp/index.html" >FTP工具</a></li>
+<li><a href="../../download/soft/index.html" >编程软件</a></li>
+<li><a href="../../download/jQuery/index.html" >jQuery插件</a></li>
+    </ul><span></span></li>
+    <li><a href="../../shop/index.html">模板商城</a></li>
+  <li><a href="../../about.html">关于我们</a></li>
+
+
+
+      </ul>
+    </nav>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+  </div>
+  <div class="is-search">
+    <section><i></i>请输入关键字词</section>
+  </div>
+  <div class="search-page">
+    <div class="go-left"></div>
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="clear"></div>
+    <div class="hot-search">
+      <p>热门搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=6.html"><i>1</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>2</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>3</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>4</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>5</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>6</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>7</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>8</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>9</i>日记</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>10</i>付出才有收获</a></li>
+ 
+      </ul>
+    </div>
+    <div class="new-search">
+      <p>最新搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=11.html"><i>1</i>源码</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>2</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>3</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>4</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>5</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=6.html"><i>6</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>7</i>付出才有收获</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>8</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>9</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>10</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>11</i>日记</a></li>
+ 
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="clear blank"></div>
+<article>
+  <div class="left-box">
+    <div class="whitebg">
+      <div class="news-title"><span class="weizhi">您现在的位置是：<a href="../../index.html">首页</a>&nbsp;>&nbsp;<a href="../index.html">SEO优化</a>&nbsp;>&nbsp;<a href="index.html">百度SEO</a></span>
+        <h2>百度SEO</h2>
+      </div>
+      <div class="newstext-box">
+        <h1 class="news-title-h1">个人博客网站如何使用第三方去广告的评论插件</h1>
+        <div class="keywords"><a href="../../e/tags/index_tagid=10&amp;tempid=8.html" target="_blank">个人博客</a> <a href="../../e/tags/index_tagid=40&amp;tempid=8.html" target="_blank">评论插件</a></div>
+        <div class="picview-other">   <span class="po-date">2019-05-08</span><span class="po-classname">百度SEO</span><span class="po-view"><script src=../../e/public/ViewClick/index_classid=12&amp;id=73&amp;addclick=1.html></script></span> </div>
+        <div class="smalltext"><i></i>使用第三方评论插件的好处就是不用存放在本地数据库，不用担心注册机注册一堆无用的账号信息，还能有效的防止一些垃圾评论和留言。当然如果你技术过硬的话，自己写一个评论留言插</div>
+        <div class="newstext">
+使用第三方评论插件的好处就是不用存放在本地数据库，不用担心注册机注册一堆无用的账号信息，还能有效的防止一些垃圾评论和留言。当然如果你技术过硬的话，自己写一个评论留言插件是最好不过的，这里我要说的第三方评论插件是&ldquo;畅言&rdquo;。如何去掉畅言的广告呢，将以下两个js文件，保存到本地目录<br /><br />1、<a href="https://www.yangqq.net/d/file/jstt/web/2019-04-07/f1eeac89d5c928848fd978c0b5b6878a.js">changyan.js</a><br />2、<a href="https://www.yangqq.net/d/file/jstt/web/2019-04-07/b18dc46085456e65060eb1634e7c09d7.js">version-v3.js</a><br /><br />第二步，修改changyan.js大概72行，地址改成相对或者绝对地址。如果是https网站，记得https，不要用http<br /><br /><img alt="" src="https://www.yangqq.net/d/file/jstt/web/2019-04-07/5e3f3fffcd88a99d3421a53befcac8b1.png" /><br />&nbsp;<br />第三步，安装PC版代码（适应帝国cms，也适应手机，其他版本不合适），修改调用地址，例如本站的安装代码
+<table border="0" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9</td>
+			<td><code>&lt;!--PC版--&gt;</code><br /><code>&lt;div id=</code><code>&quot;SOHUCS&quot;</code>&nbsp;<code>sid=</code><code>&quot;917&quot;</code>&nbsp;<code>&gt;&lt;/div&gt;</code><br /><code>&lt;script charset=</code><code>&quot;utf-8&quot;</code>&nbsp;<code>type=</code><code>&quot;text/javascript&quot;</code>&nbsp;<code>src=</code><code>&quot;https://www.yangqq.net/skin/html/js/cy/changyan.js&quot;</code>&nbsp;<code>&gt;&lt;/script&gt;</code><br /><code>&lt;script type=</code><code>&quot;text/javascript&quot;</code><code>&gt;</code><br /><code>window.changyan.api.config({</code><br /><code>appid:&nbsp;</code><code>&#39;cyt6UkrdY&#39;</code><code>,</code><br /><code>conf:&nbsp;</code><code>&#39;prod_37667ae67efaadf448cac07713d3165a&#39;</code><br /><code>});</code><br /><code>&lt;/script&gt;</code></td>
+		</tr>
+	</tbody>
+</table><p></p>
+        </div>
+        <div class="diggit"><a href="JavaScript:makeRequest('/e/public/digg/?classid=12&id=73&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');"> 很赞哦！ </a>(<b id="diggnum"><script type="text/javascript" src="../../e/public/ViewClick/index_classid=12&amp;id=73&amp;down=5.html"></script></b>)</div>
+        <div class="clear"></div>
+        <div class="share" id="down"><img src="../../skin/menhu/images/wx.png">          <div class="share-text">
+            <p>扫描关注青于蓝微信公众号，第一时间获取网站模板更新动态</p>
+            <p>转载请说明来源于"青于蓝排名建站"</p>
+            <p>本文地址：<a href="73.html" target="_blank">/seo/baidu/73.html</a></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="info-pre-next">
+          <ul>
+            <li><a href="72.html"><i><em>上一篇</em><img src="../../skin/menhu/images/pic08.jpg"></i>
+              <h2>自己不会个人博客网站制作，你会选择用什么博客程序源码？</h2>
+              <p>这些开源的博客程序源码，都是经过很多次版本测试的，都有固定的使用人群。我所知道的主流的博客程序有，Z-blog，Emlog，WordPress，Typecho等，免费的cms系统有，织梦cms（dedecms），phpcms，帝国cms（EmpireCMS）等。</p>
+              </a></li>
+            <li><a href="74.html"><i><em>下一篇</em><img src="../../skin/menhu/images/pic07.jpg"></i>
+              <h2>【排名技术建站】杨青助你快速实现主站为核心的搜索排名霸屏</h2>
+              <p>网站程序。不管你是自己开发也好，还是用开源cms也好，纯静态页面比动态页面还有伪静态页面要好，无论是从响应速度还是收录来说。帝国cms也是目前我认为做优化最好，也是最安全的系统。以我7年的建站经验来说，网上这么多的开源cms，偏偏选择帝国cms，因为帝国cms不仅仅是纯静态页面，而且帝国cms的开发人员一直在维护，帝国的功能升级，更新，而且还安全，备份搬家都很方便。</p>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clear blank"></div>
+    <div class="otherlink whitebg">
+      <div class="news-title">
+        <h2>相关文章</h2>
+      </div>
+      <ul>
+<li><a href="72.html" title="自己不会个人博客网站制作，你会选择用什么博客程序源码？">自己不会个人博客网站制作，你会选择用什么博客程序源码</a></li><li><a href="71.html" title="一个SEO站长分享个人博客产品网赚建站经历全过程">一个SEO站长分享个人博客产品网赚建站经历全过程</a></li><li><a href="../../blog/design/40.html" title="个人博客，属于我的小世界！">个人博客，属于我的小世界！</a></li>      </ul>
+    </div>
+    <div class="ad ad-big"><a href='http://menhu.ip3q.com/e/public/ClickAd?adid=16' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/82c0a8be75a4fa8d152cae2cdc05d1c4.jpg' border=0 width='830' height='140' alt=''></a></div>
+    <div class="pinglun-box whitebg">
+      <div class="news-title">
+        <h2>文章评论</h2>
+      </div>
+<!-- 评论 开始 -->
+<div class="pinglun">
+<div class="pl-520am" data-id="73" data-classid="12" data-showhot="0"></div>
+<script type="text/javascript" src="../../e/extend/lgyPl/api.js"></script>
+</div>
+<!-- 评论 结束 -->
+    </div>
+  </div>
+  <aside class="side-section right-box">
+    <div class="side-tab">
+      <ul id="sidetab">
+        <li class="sidetab-current">站长推荐</li>
+        <li>点击排行</li>
+      </ul>
+      <div id="sidetab-content">
+        <section>
+          <div class="tuijian">
+      <section class="topnews imgscale"><a href="100.html"><img src="../../skin/menhu/images/pic06.jpg"><span>个人博客，我为什么要用帝国cms？</span></a></section>
+      <ul>
+        <li><a href="99.html" title="网易博客关闭，何不从此开始潇洒行走江湖！" target="_blank"><i><img src="../../skin/menhu/images/pic05.jpg"></i>
+          <p>网易博客关闭，何不从此开始潇洒行走江湖！</p>
+          </a></li>
+        <li><a href="74.html" title="【排名技术建站】杨青助你快速实现主站为核心的搜索排名霸屏" target="_blank"><i><img src="../../skin/menhu/images/pic07.jpg"></i>
+          <p>【排名技术建站】杨青助你快速实现主站为核心的搜索排名霸屏</p>
+          </a></li>
+        <li><a href="73.html" title="个人博客网站如何使用第三方去广告的评论插件" target="_blank"><i><img src="../../skin/menhu/images/pic02.jpg"></i>
+          <p>个人博客网站如何使用第三方去广告的评论插件</p>
+          </a></li>
+        <li><a href="72.html" title="自己不会个人博客网站制作，你会选择用什么博客程序源码？" target="_blank"><i><img src="../../skin/menhu/images/pic08.jpg"></i>
+          <p>自己不会个人博客网站制作，你会选择用什么博客程序源码？</p>
+          </a></li>
+        <li><a href="71.html" title="一个SEO站长分享个人博客产品网赚建站经历全过程" target="_blank"><i><img src="../../skin/menhu/images/pic04.jpg"></i>
+          <p>一个SEO站长分享个人博客产品网赚建站经历全过程</p>
+          </a></li>
+        <li><a href="70.html" title="IP要突破2000+了" target="_blank"><i><img src="https://www.yangqq.net/d/file/news/s/2018-11-11/84d48f3798fbe1e0b16e7b944ee4b277.jpg"></i>
+          <p>IP要突破2000+了</p>
+          </a></li>
+        <li><a href="1.html" title="【告别2018】耕耘才有所得，付出才有收获" target="_blank"><i><img src="https://www.yangqq.net/d/file/blogs/2018-12-31/e1d70bb0c58efaea309ebdb0c23d3758.jpg"></i>
+          <p>【告别2018】耕耘才有所得，付出才有收获</p>
+          </a></li>
+      </ul>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="paihang">
+      <section class="topnews imgscale"><a href="100.html"><img src="../../skin/menhu/images/pic06.jpg"><span>个人博客，我为什么要用帝国cms？</span></a></section>
+      <ul>
+        <li><i></i><a href="100.html" title="个人博客，我为什么要用帝国cms？" target="_blank">个人博客，我为什么要用帝国cms？</a></li>
+        <li><i></i><a href="99.html" title="网易博客关闭，何不从此开始潇洒行走江湖！" target="_blank">网易博客关闭，何不从此开始潇洒行走江湖！</a></li>
+        <li><i></i><a href="72.html" title="自己不会个人博客网站制作，你会选择用什么博客程序源码？" target="_blank">自己不会个人博客网站制作，你会选择用什么博客程序源码？</a></li>
+        <li><i></i><a href="73.html" title="个人博客网站如何使用第三方去广告的评论插件" target="_blank">个人博客网站如何使用第三方去广告的评论插件</a></li>
+        <li><i></i><a href="74.html" title="【排名技术建站】杨青助你快速实现主站为核心的搜索排名霸屏" target="_blank">【排名技术建站】杨青助你快速实现主站为核心的搜索排名霸屏</a></li>
+        <li><i></i><a href="70.html" title="IP要突破2000+了" target="_blank">IP要突破2000+了</a></li>
+        <li><i></i><a href="1.html" title="【告别2018】耕耘才有所得，付出才有收获" target="_blank">【告别2018】耕耘才有所得，付出才有收获</a></li>
+        <li><i></i><a href="71.html" title="一个SEO站长分享个人博客产品网赚建站经历全过程" target="_blank">一个SEO站长分享个人博客产品网赚建站经历全过程</a></li>
+      </ul>
+         </div>
+        </section>
+      </div>
+    </div>
+    <div class="ad ad-small"><a href='https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=l1qstn8f' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/d27278b3e3d7e3dabf07fcee6fc54dc1.jpg' border=0 width='320' height='132' alt=''></a></div>
+    <div class="whitebg cloud">
+      <h2 class="side-title">标签云</h2>
+      <ul>
+     <a href="../../e/tags/index_tagid=59&amp;tempid=8.html" target="_blank">网站建设(3)</a> <a href="../../e/tags/index_tagid=29&amp;tempid=8.html" target="_blank">赛跑(1)</a> <a href="../../e/tags/index_tagid=3&amp;tempid=8.html" target="_blank">4(1)</a> <a href="../../e/tags/index_tagid=39&amp;tempid=8.html" target="_blank">程序源码(1)</a> <a href="../../e/tags/index_tagid=20&amp;tempid=8.html" target="_blank">程序员(7)</a> <a href="../../e/tags/index_tagid=34&amp;tempid=8.html" target="_blank">seo优化(1)</a> <a href="../../e/tags/index_tagid=22&amp;tempid=8.html" target="_blank">程序人生(1)</a> <a href="../../e/tags/index_tagid=60&amp;tempid=8.html" target="_blank">网易博客(1)</a> <a href="../../e/tags/index_tagid=17&amp;tempid=8.html" target="_blank">毕业(2)</a> <a href="../../e/tags/index_tagid=9&amp;tempid=8.html" target="_blank">收获(1)</a> <a href="../../e/tags/index_tagid=18&amp;tempid=8.html" target="_blank">雨天(1)</a> <a href="../../e/tags/index_tagid=23&amp;tempid=8.html" target="_blank">设计师(1)</a> <a href="../../e/tags/index_tagid=16&amp;tempid=8.html" target="_blank">生活日记(1)</a> <a href="../../e/tags/index_tagid=56&amp;tempid=8.html" target="_blank">建设(1)</a> <a href="../../e/tags/index_tagid=35&amp;tempid=8.html" target="_blank">SEO(1)</a> <a href="../../e/tags/index_tagid=44&amp;tempid=8.html" target="_blank">设计原则(1)</a> <a href="../../e/tags/index_tagid=15&amp;tempid=8.html" target="_blank">遇见(1)</a> <a href="../../e/tags/index_tagid=49&amp;tempid=8.html" target="_blank">视频教程(1)</a> <a href="../../e/tags/index_tagid=12&amp;tempid=8.html" target="_blank">个人日记(0)</a> <a href="../../e/tags/index_tagid=52&amp;tempid=8.html" target="_blank">企业网站(10)</a>      </ul>
+    </div>
+    <div class="clear blank"></div>
+    <div class="whitebg suiji">
+      <h2 class="side-title">猜你喜欢</h2>
+      <ul>
+                        <li><a target="_blank"  href="74.html">【排名技术建站】杨青助你快速实现主站为核心的搜索排名霸屏</a></li>
+                        <li><a target="_blank"  href="71.html">一个SEO站长分享个人博客产品网赚建站经历全过程</a></li>
+                        <li><a target="_blank"  href="1.html">【告别2018】耕耘才有所得，付出才有收获</a></li>
+                        <li><a target="_blank"  href="70.html">IP要突破2000+了</a></li>
+                        <li><a target="_blank"  href="99.html">网易博客关闭，何不从此开始潇洒行走江湖！</a></li>
+                        <li><a target="_blank"  href="100.html">个人博客，我为什么要用帝国cms？</a></li>
+                        <li><a target="_blank"  href="72.html">自己不会个人博客网站制作，你会选择用什么博客程序源码？</a></li>
+                        <li><a target="_blank"  href="73.html">个人博客网站如何使用第三方去广告的评论插件</a></li>
+                  </ul>
+    </div>
+  </aside>
+</article>
+<div class="clear blank"></div>
+<footer>
+  <div class="footer box">
+    <div class="wxbox">
+      <ul>
+        <li><img src="../../skin/menhu/images/wxgzh.jpg"><span>微信公众号</span></li>
+        <li><img src="../../skin/menhu/images/wx.png"><span>我的微信</span></li>
+      </ul>
+    </div>
+    <div class="endnav">
+      <p><b>站点声明：</b></p>
+      <p>1、本站个人博客模板，均为杨青青本人设计，个人可以使用，但是未经许可不得用于任何商业目的。</p>
+      <p>2、所有文章未经授权禁止转载、摘编、复制或建立镜像，如有违反，追究法律责任。举报邮箱：<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E" target="_blank">dacesmiling@qq.com</a></p>
+      <p>Copyright © <a href="https://www.yangqq.net" target="_blank">www.yangqq.net</a> All Rights Reserved. 备案号：<a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">蜀ICP备11002373号-1</a> <a href="../../sitemap.xml" target="_blank">网站地图</a></p>
+    </div>
+  </div>
+</footer>
+<div class="toolbar-open"></div>
+<div class="toolbar">
+  <div class="toolbar-close"><span id="closed"></span></div>
+  <div class="toolbar-nav">
+    <ul id="toolbar-menu">
+      <li><i class="side-icon-user"></i>
+        <section>
+          <div class="userinfo">
+              <script src="../../e/member/login/loginjs.php.html"></script>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-qq"></i>
+        <section class="qq-section">
+          <div class="qqinfo"><a href="https://jq.qq.com/?_wv=1027&amp;k=5EH6xZg">前端设计交流群①</a><a href="https://jq.qq.com/?_wv=1027&amp;k=52fM36y">前端设计交流群②</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=476847113&amp;site=qq&amp;menu=yes">站长QQ</a></div>
+        </section>
+      </li>
+      <li><i class="side-icon-weixin"></i>
+        <section class="weixin-section">
+          <div class="weixin-info">
+            <p>个人微信扫码</p>
+<img src="../../skin/menhu/images/wx.png">            <p class="text12">工作时间</p>
+            <p class="text12">周一至周日 9:00-21:00</p>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-dashang"></i>
+        <section class="dashang-section">
+          <p>如果你觉得本站很棒，可以通过扫码支付打赏哦！</p>
+          <ul>
+            <li><img src="../../skin/menhu/images/weipayimg.jpg">微信收款码</li>
+            <li><img src="../../skin/menhu/images/alipayimg.jpg">支付宝收款码</li>
+          </ul>
+        </section>
+      </li>
+    
+    </ul>
+  </div>
+</div>
+<div class="endmenu">
+<ul>
+<li><a href="../../index.html"><i class="iconfont icon-shouye"></i>首页</a></li>
+<li><a href="../../phone-fenlei.html"><i class="iconfont icon-fenlei"></i>分类</a></li>
+<li><a href="../../phone-list.html"><i class="iconfont icon-navicon-wzgl"></i>所有</a></li>
+<li><a href="../../e/member/my/index.html"><i class="iconfont icon-My"></i>我的</a></li>
+</ul>
+</div>
+<a href="#" title="返回顶部" class="icon-top"></a>
+</body>
+</html><script src="../../e/public/onclick/index_enews=donews&amp;classid=12&amp;id=73.html"></script>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>别让这些闹心的套路，毁了你的网页设计_前端设计</title>
+<meta name="keywords" content="网页设计" />
+<meta name="description" content="无限滚动的出现，终于解决了移动端上查看繁复的分类页的问题。不过与此同时，无限滚动的设计，还为我们创造了不少从未遇到的新问题。举个例子，当你要访问一个重要的页面，而它正好在长滚动页面的底部，撇开加载页面的时间和流量不谈，滚到底部去找就已经是一个很头疼的事情了。" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../../skin/menhu/css/base.css" rel="stylesheet">
+<link href="../../skin/menhu/css/m.css" rel="stylesheet">
+<script src="../../skin/menhu/js/jquery-1.8.3.min.js" ></script>
+<script src="../../skin/menhu/js/hc-sticky.js"></script>
+<script src="../../skin/menhu/js/aside-sticky.js"></script>
+<script src="../../skin/menhu/js/main.js"></script>
+<script src="../../skin/menhu/js/side-tab.js"></script>
+<!--[if lt IE 9]>
+<script src="/skin/menhu/js/modernizr.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://menhu.ip3q.com/e/data/js/ajax.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo-section box">
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="logo"><a href="../../index.html"><img src="../../skin/menhu/images/logo.png">      <h2 class="logo-title">青于蓝</h2>
+      <p class="logo-text">排名技术建站，让你对手追赶</p>
+      </a> </div>
+  </div>
+  <div class="clear"></div>
+  <div class="topnav">
+         <h2><a href="../../index.html">青于蓝</a></h2>
+    <nav>
+      <ul id="starlist">
+        <li><a href="../../index.html">网站首页</a></li>
+    <li class="menu"><a href="../../blog/index.html" >个人博客</a>
+  <ul class="sub">  
+      <li><a href="../../blog/diary/index.html" >博客日记</a></li>
+<li><a href="../../blog/life/index.html" >程序人生</a></li>
+<li><a href="../../blog/design/index.html" >设计心得</a></li>
+<li><a href="../../blog/plan/index.html" >人生规划</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../case/index.html" >设计案例</a>
+  <ul class="sub">  
+      <li><a href="../../case/personal/index.html" >个人网站</a></li>
+<li><a href="../../case/enterprise/index.html" >企业网站</a></li>
+<li><a href="../../case/unit/index.html" >事业单位</a></li>
+<li><a href="../../case/shop/index.html" >网购商城</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../seo/index.html" >SEO优化</a>
+  <ul class="sub">  
+      <li><a href="../../seo/baidu/index.html" >百度SEO</a></li>
+<li><a href="../../seo/shuyu/index.html" >SEO专业术语</a></li>
+<li><a href="../../seo/problem/index.html" >SEO常见问题</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../index.html" >视频教程</a>
+  <ul class="sub">  
+      <li><a href="index.html" >前端设计</a></li>
+<li><a href="../js/index.html" >JS教程</a></li>
+<li><a href="../cms/index.html" >CMS教程</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../marketing/index.html" >网络营销</a>
+  <ul class="sub">  
+      <li><a href="../../marketing/extension/index.html" >网络推广</a></li>
+<li><a href="../../marketing/brand/index.html" >品牌营销</a></li>
+<li><a href="../../marketing/consciousness/index.html" >意识思维</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../download/index.html" >资源下载</a>
+  <ul class="sub">  
+      <li><a href="../../download/html/index.html" >网页制作</a></li>
+<li><a href="../../download/ftp/index.html" >FTP工具</a></li>
+<li><a href="../../download/soft/index.html" >编程软件</a></li>
+<li><a href="../../download/jQuery/index.html" >jQuery插件</a></li>
+    </ul><span></span></li>
+    <li><a href="../../shop/index.html">模板商城</a></li>
+  <li><a href="../../about.html">关于我们</a></li>
+
+
+
+      </ul>
+    </nav>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+  </div>
+  <div class="is-search">
+    <section><i></i>请输入关键字词</section>
+  </div>
+  <div class="search-page">
+    <div class="go-left"></div>
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="clear"></div>
+    <div class="hot-search">
+      <p>热门搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=6.html"><i>1</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>2</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>3</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>4</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>5</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>6</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>7</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>8</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>9</i>日记</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>10</i>付出才有收获</a></li>
+ 
+      </ul>
+    </div>
+    <div class="new-search">
+      <p>最新搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=11.html"><i>1</i>源码</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>2</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>3</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>4</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>5</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=6.html"><i>6</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>7</i>付出才有收获</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>8</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>9</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>10</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>11</i>日记</a></li>
+ 
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="clear blank"></div>
+<article>
+  <div class="left-box">
+    <div class="whitebg">
+      <div class="news-title"><span class="weizhi">您现在的位置是：<a href="../../index.html">首页</a>&nbsp;>&nbsp;<a href="../index.html">视频教程</a>&nbsp;>&nbsp;<a href="index.html">前端设计</a></span>
+        <h2>前端设计</h2>
+      </div>
+      <div class="newstext-box">
+        <h1 class="news-title-h1">别让这些闹心的套路，毁了你的网页设计</h1>
+        <div class="keywords"><a href="../../e/tags/index_tagid=43&amp;tempid=8.html" target="_blank">网页设计</a></div>
+        <div class="picview-other">   <span class="po-date">2019-05-08</span><span class="po-classname">前端设计</span><span class="po-view"><script src=../../e/public/ViewClick/index_classid=16&amp;id=76&amp;addclick=1.html></script></span> </div>
+        <div class="smalltext"><i></i>无限滚动的出现，终于解决了移动端上查看繁复的分类页的问题。不过与此同时，无限滚动的设计，还为我们创造了不少从未遇到的新问题。举个例子，当你要访问一个重要的页面，而它正好在长滚动页面的底部，撇开加载页面的时间和流量不谈，滚到底部去找就已经是一个很头疼的事情了。</div>
+        <div class="newstext">
+网页设计和做人一样，需要少一些套路，多一些真诚。那么下面就为大家揭穿那些看似好用，但用户体验并不好的设计模式。另外再附上解决办法，避免网页设计中出现这些问题。<br /><br /><strong>1、色彩种类运用过多</strong><br />很多站长为了让自己的网站更有吸引力，往往会给网站增添一些绚丽的颜色，加入大量色彩鲜艳的文字与边框，而这些颜色的运用与图片内容并不协调。降低了网站内容的可读性。所以如何更好的把握网站&lt;访问者的喜好,为用户提供一个可读性更强的网站?这其中颜色就起到了相当大的作用。<br /><br /><strong>解决办法</strong>：最好的办法是使用最多三种主色调与素雅的背景。<br />1、推荐给大家两篇关于颜色搭配的文章《<u><a href="http://www.yangqq.com/jstt/css3/2018-03-14/805.html" target="_blank">6条网页设计配色原则,让你秒变配色高手</a></u>》以及《<u><a href="http://www.yangqq.com/jstt/bj/2013-06-08/178.html" target="_blank">Web Color Design&mdash;&mdash;设计师谈网页配色艺术</a></u>》<br />2、如果你还在为获取web颜色而烦恼的话，建议你使用<u><a href="http://www.peise.net/tools/web/">Color Scheme Designer</a></u>取色工具，以不同的模式，可以让你一下获取相近的四个颜色。<br /><br /><img alt="" src="https://www.yangqq.net/d/file/jstt/css3/2018-03-25/7a4943e6097a240f138f077a6a3ed3e9.jpg" /><br /><br /><strong>2、字体大小存在问题</strong><br />这类问题往往存在多种表现形式，包括字体不足12号使得用户无法看清甚至点不到后退按钮。很多网页的上的字体都是正常大小,对我们来说刚好,但是父母来说网页上的字就会偏小了。<br /><br /><strong>解决办法：</strong>一般中文的字体大小是12px或者14px。随着显示器分辨率不断提高，12px的文字在大于1440*900的显示器里看起来会显得比较小，阅读起来不是很容易，所以现在网页设计里面用12px的已经比较少了，特别是文章正文部分，普遍都会用14px。<br /><br />对于font-family，一般来说14px及以下大小的文字，应当设置为宋体，当然也可以设置为微软雅黑。不过在XP下默认是没有雅黑字体的，所以在css里面可以这样设置字体： font-family:&quot;Microsoft Yahei&quot;,simSun,Arial; 把几个字体用逗号隔开，如果系统没有第一种字体，就用第二种，如果没有第二种就用第三种，以此类推。 对于大于14px的文字，特别是大于16px的文字，宋体看起来就比较丑陋了，所以建议是用黑体或者微软雅黑，看起来回舒服一些。<br /><br />3、<strong>过度使用GIF、动画与音效</strong><br /><br />在某些情况下，GIF动画非常有趣；动画能够让访问者获得更好的使用体验；音效可能也有助于提升感受。但这些都只是点缀，切记不可画蛇添足。GIF动画过多会造成一种庸俗而幼稚的氛围，而大家对于音效以及音乐的取向也有所不同。有时，我们精心设计，却难以实现效果。<br /><br /><strong>解决办法：</strong>千万别让费尽心力添加的动画与音效成了刺眼又刺耳的垃圾元素。使用GIF动画最好能免则免<br /><br />4、<strong>超大的导航菜单<br /><br /><img alt="" src="https://www.yangqq.net/d/file/jstt/css3/2018-03-25/38b6a61afae81367a8979cb9a20871c5.jpg" /></strong><br /><br />大型的导航菜单，对于包含大量不同子页面的网站而言，似乎是一个很好的解决方案，然而实际情况并非如此。我们常见的网站设计错误就是在边栏及子菜单中塞进长长的清单，超大的导航菜单对于绝大多数的普通用户而言，看起来更像是迷宫。这看似满足了全部用户的需求，实则会分散用户注意力，并让用户觉得不那么爽。如果导航、侧栏与底栏无法协同工作，那么网站内容再好也将没有意义。<br /><br /><strong>解决办法：</strong>信息分类整合其实是就是为了应对这种情况而存在的，将网站的导航内容规划为不同的大分类，有了层级，用户更容易筛选；又或者你可以将导航设计成为更为有趣的图文式链接，让它看起来不那么枯燥，也不失为一个可取的方案。永远不要低估在屏幕上留白的重要性，因为其是创造平衡美感的重要基础。<br /><br />5、<strong>乏味无趣的加载页面<br /><br /><img alt="" src="https://www.yangqq.net/d/file/jstt/css3/2018-03-25/f9e0c0b48031d0e0017fc9bad904bde3.gif" /></strong><br />随着技术的进步，时间对于人们来说越来越宝贵，为了一个20M的网页在浏览器前静静坐上1分钟等待加载，那大多数用户都会有关掉它的冲动，因为我们会在这个过程中无数次怀疑这个页面是不是卡住了。如今的网站加载需要的是速度和效率，这符合当前的真实用户需求。给用户提供即时的位置、时间和响应对一个优秀的产品来说很重要。<br /><br /><strong>解决办法：</strong>
+<p>如果你的网站在加载速度上有问题，首先应该加载页面中较轻的元素，以及整个框架，然后使用加载器将较大和较重的元素逐步填充进去。这样一来，用户就不会觉得页面卡在那儿，而是在逐步加载了。</p>
+<p>缓冲应该尽量避免，如果它必须存在，那就应该有趣一点。加载页面可以是一个加载进度条，一个为浪费用户等待时间的道歉或者是配有文案的简单动画。<br /><br />6、<strong>设计臃肿，内容杂乱</strong><br /><br />不断增加的功能会导致需求和交付之间的延迟，这会让设计逐渐变得臃肿。将各类新闻、链接以及图片塞进同一页面只会使其显得杂乱不堪，导致用户难以阅读及导航。<br /><br /><strong>解决办法：坚持增加必要且有价值的功能，尽量避免内容混乱多余。</strong><br /><br />7、<strong>对移动设备不够友好</strong><br /><br />智能手机已经成为人们在互联网上获取内容的最佳途径。大家的多数出站流量很可能都指向智能手机或者平板电脑。如果各网页没有针对移动设备进行优化，那么可能会面对难以进行正常访问等问题。<br /><br /><strong>解决办法：让你的网页代码适应各种手机、平板等不同分辨率大小<br /><br />8、无限滚动</strong><br /><br />无限滚动的出现，终于解决了移动端上查看繁复的分类页的问题。不过与此同时，无限滚动的设计，还为我们创造了不少从未遇到的新问题。举个例子，当你要访问一个重要的页面，而它正好在长滚动页面的底部，撇开加载页面的时间和流量不谈，滚到底部去找就已经是一个很头疼的事情了。<br /><br /><strong>解决办法：</strong>就像超大的导航菜单一样，想要让它发挥作用一样有合理的解决方案。将传统的移动端页面和无限滚动两种模式结合起来使用，让用户自己来选择更适合自己的模式，这有助于提升页面的可访问性。<br />&nbsp;</p><p></p>
+        </div>
+        <div class="diggit"><a href="JavaScript:makeRequest('/e/public/digg/?classid=16&id=76&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');"> 很赞哦！ </a>(<b id="diggnum"><script type="text/javascript" src="../../e/public/ViewClick/index_classid=16&amp;id=76&amp;down=5.html"></script></b>)</div>
+        <div class="clear"></div>
+        <div class="share" id="down"><img src="../../skin/menhu/images/wx.png">          <div class="share-text">
+            <p>扫描关注青于蓝微信公众号，第一时间获取网站模板更新动态</p>
+            <p>转载请说明来源于"青于蓝排名建站"</p>
+            <p>本文地址：<a href="76.html" target="_blank">/course/web/76.html</a></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="info-pre-next">
+          <ul>
+            <li><a href="75.html"><i><em>上一篇</em><img src="../../skin/menhu/images/pic07.jpg"></i>
+              <h2>网页中图片属性固定宽度，如何用js改变大小</h2>
+              <p>100%这个方案不是很完美，如果图片上传的大小没有超过650，那么PC端图片会被放大。还有一种解决方案就是，编辑后台内容的时候，将图片属性后面的width，height值都删掉，让css来控制就行了。同样用max-width来控制图片大小，小图＜650px，图片不会被更改，＞650px，图片宽度就是650px。，那么手机端就用100%来表示。</p>
+              </a></li>
+            <li><a href="77.html"><i><em>下一篇</em><img src="../../skin/menhu/images/pic05.jpg"></i>
+              <h2>十条设计原则教你学会如何设计网页布局!</h2>
+              <p>网页常见的布局有很多种,单列布局,多列布局.其中单列布局是国外很多网站比较常用的.咱们很多站长以及门户网站都使用的是是两列布局,很少用三列布局的.
+下面我来分享下我们</p>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clear blank"></div>
+    <div class="otherlink whitebg">
+      <div class="news-title">
+        <h2>相关文章</h2>
+      </div>
+      <ul>
+<li><a href="80.html" title="个人博客模板《今夕何夕》后台管理文档-在线视频教程">个人博客模板《今夕何夕》后台管理文档-在线视频教程</a></li><li><a href="79.html" title="帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例">帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</a></li><li><a href="78.html" title="帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例">帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</a></li><li><a href="77.html" title="十条设计原则教你学会如何设计网页布局!">十条设计原则教你学会如何设计网页布局!</a></li><li><a href="76.html" title="别让这些闹心的套路，毁了你的网页设计">别让这些闹心的套路，毁了你的网页设计</a></li><li><a href="75.html" title="网页中图片属性固定宽度，如何用js改变大小">网页中图片属性固定宽度，如何用js改变大小</a></li><li><a href="82.html" title="企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身">企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身</a></li><li><a href="81.html" title="个人博客网站用帝国cms如何添加音乐">个人博客网站用帝国cms如何添加音乐</a></li>      </ul>
+    </div>
+    <div class="ad ad-big"><a href='http://menhu.ip3q.com/e/public/ClickAd?adid=16' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/82c0a8be75a4fa8d152cae2cdc05d1c4.jpg' border=0 width='830' height='140' alt=''></a></div>
+    <div class="pinglun-box whitebg">
+      <div class="news-title">
+        <h2>文章评论</h2>
+      </div>
+<!-- 评论 开始 -->
+<div class="pinglun">
+<div class="pl-520am" data-id="76" data-classid="16" data-showhot="0"></div>
+<script type="text/javascript" src="../../e/extend/lgyPl/api.js"></script>
+</div>
+<!-- 评论 结束 -->
+    </div>
+  </div>
+  <aside class="side-section right-box">
+    <div class="side-tab">
+      <ul id="sidetab">
+        <li class="sidetab-current">站长推荐</li>
+        <li>点击排行</li>
+      </ul>
+      <div id="sidetab-content">
+        <section>
+          <div class="tuijian">
+      <section class="topnews imgscale"><a href="80.html"><img src="../../skin/menhu/images/pic02.jpg"><span>个人博客模板《今夕何夕》后台管理文档-在线视频教程</span></a></section>
+      <ul>
+        <li><a href="79.html" title="帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例" target="_blank"><i><img src="../../skin/menhu/images/pic03.jpg"></i>
+          <p>帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</p>
+          </a></li>
+        <li><a href="78.html" title="帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例" target="_blank"><i><img src="../../skin/menhu/images/pic04.jpg"></i>
+          <p>帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</p>
+          </a></li>
+      </ul>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="paihang">
+      <section class="topnews imgscale"><a href="80.html"><img src="../../skin/menhu/images/pic02.jpg"><span>个人博客模板《今夕何夕》后台管理文档-在线视频教程</span></a></section>
+      <ul>
+        <li><i></i><a href="80.html" title="个人博客模板《今夕何夕》后台管理文档-在线视频教程" target="_blank">个人博客模板《今夕何夕》后台管理文档-在线视频教程</a></li>
+        <li><i></i><a href="79.html" title="帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例" target="_blank">帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</a></li>
+        <li><i></i><a href="77.html" title="十条设计原则教你学会如何设计网页布局!" target="_blank">十条设计原则教你学会如何设计网页布局!</a></li>
+        <li><i></i><a href="82.html" title="企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身" target="_blank">企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身</a></li>
+        <li><i></i><a href="78.html" title="帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例" target="_blank">帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</a></li>
+        <li><i></i><a href="75.html" title="网页中图片属性固定宽度，如何用js改变大小" target="_blank">网页中图片属性固定宽度，如何用js改变大小</a></li>
+        <li><i></i><a href="76.html" title="别让这些闹心的套路，毁了你的网页设计" target="_blank">别让这些闹心的套路，毁了你的网页设计</a></li>
+        <li><i></i><a href="81.html" title="个人博客网站用帝国cms如何添加音乐" target="_blank">个人博客网站用帝国cms如何添加音乐</a></li>
+      </ul>
+         </div>
+        </section>
+      </div>
+    </div>
+    <div class="ad ad-small"><a href='https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=l1qstn8f' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/d27278b3e3d7e3dabf07fcee6fc54dc1.jpg' border=0 width='320' height='132' alt=''></a></div>
+    <div class="whitebg cloud">
+      <h2 class="side-title">标签云</h2>
+      <ul>
+     <a href="../../e/tags/index_tagid=5&amp;tempid=8.html" target="_blank">看娃三年(1)</a> <a href="../../e/tags/index_tagid=34&amp;tempid=8.html" target="_blank">seo优化(1)</a> <a href="../../e/tags/index_tagid=43&amp;tempid=8.html" target="_blank">网页设计(1)</a> <a href="../../e/tags/index_tagid=57&amp;tempid=8.html" target="_blank">运营(1)</a> <a href="../../e/tags/index_tagid=50&amp;tempid=8.html" target="_blank">个人博客网站(1)</a> <a href="../../e/tags/index_tagid=36&amp;tempid=8.html" target="_blank">网赚(1)</a> <a href="../../e/tags/index_tagid=19&amp;tempid=8.html" target="_blank">心情(1)</a> <a href="../../e/tags/index_tagid=14&amp;tempid=8.html" target="_blank">爱情(1)</a> <a href="../../e/tags/index_tagid=15&amp;tempid=8.html" target="_blank">遇见(1)</a> <a href="../../e/tags/index_tagid=8&amp;tempid=8.html" target="_blank">付出(1)</a> <a href="../../e/tags/index_tagid=22&amp;tempid=8.html" target="_blank">程序人生(1)</a> <a href="../../e/tags/index_tagid=40&amp;tempid=8.html" target="_blank">评论插件(1)</a> <a href="../../e/tags/index_tagid=47&amp;tempid=8.html" target="_blank">今夕何夕(1)</a> <a href="../../e/tags/index_tagid=33&amp;tempid=8.html" target="_blank">外包(1)</a> <a href="../../e/tags/index_tagid=49&amp;tempid=8.html" target="_blank">视频教程(1)</a> <a href="../../e/tags/index_tagid=13&amp;tempid=8.html" target="_blank">思源夜景(1)</a> <a href="../../e/tags/index_tagid=31&amp;tempid=8.html" target="_blank">如何发展(1)</a> <a href="../../e/tags/index_tagid=39&amp;tempid=8.html" target="_blank">程序源码(1)</a> <a href="../../e/tags/index_tagid=41&amp;tempid=8.html" target="_blank">排名技术建站(1)</a> <a href="../../e/tags/index_tagid=46&amp;tempid=8.html" target="_blank">个人博客模板(1)</a>      </ul>
+    </div>
+    <div class="clear blank"></div>
+    <div class="whitebg suiji">
+      <h2 class="side-title">猜你喜欢</h2>
+      <ul>
+                        <li><a target="_blank"  href="76.html">别让这些闹心的套路，毁了你的网页设计</a></li>
+                        <li><a target="_blank"  href="80.html">个人博客模板《今夕何夕》后台管理文档-在线视频教程</a></li>
+                        <li><a target="_blank"  href="81.html">个人博客网站用帝国cms如何添加音乐</a></li>
+                        <li><a target="_blank"  href="79.html">帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</a></li>
+                        <li><a target="_blank"  href="75.html">网页中图片属性固定宽度，如何用js改变大小</a></li>
+                        <li><a target="_blank"  href="78.html">帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</a></li>
+                        <li><a target="_blank"  href="77.html">十条设计原则教你学会如何设计网页布局!</a></li>
+                        <li><a target="_blank"  href="82.html">企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身</a></li>
+                  </ul>
+    </div>
+  </aside>
+</article>
+<div class="clear blank"></div>
+<footer>
+  <div class="footer box">
+    <div class="wxbox">
+      <ul>
+        <li><img src="../../skin/menhu/images/wxgzh.jpg"><span>微信公众号</span></li>
+        <li><img src="../../skin/menhu/images/wx.png"><span>我的微信</span></li>
+      </ul>
+    </div>
+    <div class="endnav">
+      <p><b>站点声明：</b></p>
+      <p>1、本站个人博客模板，均为杨青青本人设计，个人可以使用，但是未经许可不得用于任何商业目的。</p>
+      <p>2、所有文章未经授权禁止转载、摘编、复制或建立镜像，如有违反，追究法律责任。举报邮箱：<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E" target="_blank">dacesmiling@qq.com</a></p>
+      <p>Copyright © <a href="https://www.yangqq.net" target="_blank">www.yangqq.net</a> All Rights Reserved. 备案号：<a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">蜀ICP备11002373号-1</a> <a href="../../sitemap.xml" target="_blank">网站地图</a></p>
+    </div>
+  </div>
+</footer>
+<div class="toolbar-open"></div>
+<div class="toolbar">
+  <div class="toolbar-close"><span id="closed"></span></div>
+  <div class="toolbar-nav">
+    <ul id="toolbar-menu">
+      <li><i class="side-icon-user"></i>
+        <section>
+          <div class="userinfo">
+              <script src="../../e/member/login/loginjs.php.html"></script>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-qq"></i>
+        <section class="qq-section">
+          <div class="qqinfo"><a href="https://jq.qq.com/?_wv=1027&amp;k=5EH6xZg">前端设计交流群①</a><a href="https://jq.qq.com/?_wv=1027&amp;k=52fM36y">前端设计交流群②</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=476847113&amp;site=qq&amp;menu=yes">站长QQ</a></div>
+        </section>
+      </li>
+      <li><i class="side-icon-weixin"></i>
+        <section class="weixin-section">
+          <div class="weixin-info">
+            <p>个人微信扫码</p>
+<img src="../../skin/menhu/images/wx.png">            <p class="text12">工作时间</p>
+            <p class="text12">周一至周日 9:00-21:00</p>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-dashang"></i>
+        <section class="dashang-section">
+          <p>如果你觉得本站很棒，可以通过扫码支付打赏哦！</p>
+          <ul>
+            <li><img src="../../skin/menhu/images/weipayimg.jpg">微信收款码</li>
+            <li><img src="../../skin/menhu/images/alipayimg.jpg">支付宝收款码</li>
+          </ul>
+        </section>
+      </li>
+    
+    </ul>
+  </div>
+</div>
+<div class="endmenu">
+<ul>
+<li><a href="../../index.html"><i class="iconfont icon-shouye"></i>首页</a></li>
+<li><a href="../../phone-fenlei.html"><i class="iconfont icon-fenlei"></i>分类</a></li>
+<li><a href="../../phone-list.html"><i class="iconfont icon-navicon-wzgl"></i>所有</a></li>
+<li><a href="../../e/member/my/index.html"><i class="iconfont icon-My"></i>我的</a></li>
+</ul>
+</div>
+<a href="#" title="返回顶部" class="icon-top"></a>
+</body>
+</html><script src="../../e/public/onclick/index_enews=donews&amp;classid=16&amp;id=76.html"></script>

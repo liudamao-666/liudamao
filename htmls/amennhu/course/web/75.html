@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>网页中图片属性固定宽度，如何用js改变大小_前端设计</title>
+<meta name="keywords" content="" />
+<meta name="description" content="100%这个方案不是很完美，如果图片上传的大小没有超过650，那么PC端图片会被放大。还有一种解决方案就是，编辑后台内容的时候，将图片属性后面的width，height值都删掉，让css来控制就行了。同样用max-width来控制图片大小，小图＜650px，图片不会被更改，＞650px，图片宽度就是650px。，那么手机端就用100%来表示。" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../../skin/menhu/css/base.css" rel="stylesheet">
+<link href="../../skin/menhu/css/m.css" rel="stylesheet">
+<script src="../../skin/menhu/js/jquery-1.8.3.min.js" ></script>
+<script src="../../skin/menhu/js/hc-sticky.js"></script>
+<script src="../../skin/menhu/js/aside-sticky.js"></script>
+<script src="../../skin/menhu/js/main.js"></script>
+<script src="../../skin/menhu/js/side-tab.js"></script>
+<!--[if lt IE 9]>
+<script src="/skin/menhu/js/modernizr.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://menhu.ip3q.com/e/data/js/ajax.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo-section box">
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="logo"><a href="../../index.html"><img src="../../skin/menhu/images/logo.png">      <h2 class="logo-title">青于蓝</h2>
+      <p class="logo-text">排名技术建站，让你对手追赶</p>
+      </a> </div>
+  </div>
+  <div class="clear"></div>
+  <div class="topnav">
+         <h2><a href="../../index.html">青于蓝</a></h2>
+    <nav>
+      <ul id="starlist">
+        <li><a href="../../index.html">网站首页</a></li>
+    <li class="menu"><a href="../../blog/index.html" >个人博客</a>
+  <ul class="sub">  
+      <li><a href="../../blog/diary/index.html" >博客日记</a></li>
+<li><a href="../../blog/life/index.html" >程序人生</a></li>
+<li><a href="../../blog/design/index.html" >设计心得</a></li>
+<li><a href="../../blog/plan/index.html" >人生规划</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../case/index.html" >设计案例</a>
+  <ul class="sub">  
+      <li><a href="../../case/personal/index.html" >个人网站</a></li>
+<li><a href="../../case/enterprise/index.html" >企业网站</a></li>
+<li><a href="../../case/unit/index.html" >事业单位</a></li>
+<li><a href="../../case/shop/index.html" >网购商城</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../seo/index.html" >SEO优化</a>
+  <ul class="sub">  
+      <li><a href="../../seo/baidu/index.html" >百度SEO</a></li>
+<li><a href="../../seo/shuyu/index.html" >SEO专业术语</a></li>
+<li><a href="../../seo/problem/index.html" >SEO常见问题</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../index.html" >视频教程</a>
+  <ul class="sub">  
+      <li><a href="index.html" >前端设计</a></li>
+<li><a href="../js/index.html" >JS教程</a></li>
+<li><a href="../cms/index.html" >CMS教程</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../marketing/index.html" >网络营销</a>
+  <ul class="sub">  
+      <li><a href="../../marketing/extension/index.html" >网络推广</a></li>
+<li><a href="../../marketing/brand/index.html" >品牌营销</a></li>
+<li><a href="../../marketing/consciousness/index.html" >意识思维</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../download/index.html" >资源下载</a>
+  <ul class="sub">  
+      <li><a href="../../download/html/index.html" >网页制作</a></li>
+<li><a href="../../download/ftp/index.html" >FTP工具</a></li>
+<li><a href="../../download/soft/index.html" >编程软件</a></li>
+<li><a href="../../download/jQuery/index.html" >jQuery插件</a></li>
+    </ul><span></span></li>
+    <li><a href="../../shop/index.html">模板商城</a></li>
+  <li><a href="../../about.html">关于我们</a></li>
+
+
+
+      </ul>
+    </nav>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+  </div>
+  <div class="is-search">
+    <section><i></i>请输入关键字词</section>
+  </div>
+  <div class="search-page">
+    <div class="go-left"></div>
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="clear"></div>
+    <div class="hot-search">
+      <p>热门搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=6.html"><i>1</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>2</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>3</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>4</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>5</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>6</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>7</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>8</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>9</i>日记</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>10</i>付出才有收获</a></li>
+ 
+      </ul>
+    </div>
+    <div class="new-search">
+      <p>最新搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=11.html"><i>1</i>源码</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>2</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>3</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>4</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>5</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=6.html"><i>6</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>7</i>付出才有收获</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>8</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>9</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>10</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>11</i>日记</a></li>
+ 
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="clear blank"></div>
+<article>
+  <div class="left-box">
+    <div class="whitebg">
+      <div class="news-title"><span class="weizhi">您现在的位置是：<a href="../../index.html">首页</a>&nbsp;>&nbsp;<a href="../index.html">视频教程</a>&nbsp;>&nbsp;<a href="index.html">前端设计</a></span>
+        <h2>前端设计</h2>
+      </div>
+      <div class="newstext-box">
+        <h1 class="news-title-h1">网页中图片属性固定宽度，如何用js改变大小</h1>
+        <div class="keywords"></div>
+        <div class="picview-other">   <span class="po-date">2019-05-08</span><span class="po-classname">前端设计</span><span class="po-view"><script src=../../e/public/ViewClick/index_classid=16&amp;id=75&amp;addclick=1.html></script></span> </div>
+        <div class="smalltext"><i></i>100%这个方案不是很完美，如果图片上传的大小没有超过650，那么PC端图片会被放大。还有一种解决方案就是，编辑后台内容的时候，将图片属性后面的width，height值都删掉，让css来控制就行了。同样用max-width来控制图片大小，小图＜650px，图片不会被更改，＞650px，图片宽度就是650px。，那么手机端就用100%来表示。</div>
+        <div class="newstext">
+后台上传图片后，都有一个图片属性，会指定图片的宽和高，如果图片固定了宽度和高度，PC端用max-width可以控制最大宽度，高度自动缩放。但是手机端就没法自动缩放，可以使用js来改变图片的style，通过100%比例，当然也可以设置px固定的高度宽度。<br />&nbsp;
+<p>html默认样式：<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;news_infos&quot;&nbsp;id=&quot;newsp&quot;&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;&lt;img src=&quot;images/v1.jpg&quot; style=&quot;width:300px;height:100px&quot;&gt;&lt;/p&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</p><br />&nbsp;
+<p>CSS：<br /><br />.news_infos img { max-width: 650px;height:auto; }</p><br />&nbsp;
+<p>js：<br />&nbsp;&lt;script type=&quot;text/javascript&quot;&gt; &nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp; &nbsp;var aImg=document.getElementById(&quot;newsp&quot;).getElementsByTagName(&#39;img&#39;);<br />&nbsp; &nbsp; &nbsp;for(var i=0;i&lt;aImg.length;i++){<br />&nbsp; &nbsp; &nbsp; aImg[i].style.height=&quot;100%&quot;;<br />&nbsp; &nbsp; &nbsp; aImg[i].style.width=&quot;100%&quot;;<br />&nbsp; &nbsp; &nbsp; }&nbsp;&nbsp; &nbsp; &nbsp;<br />&nbsp; &lt;/script&gt; &nbsp;&nbsp;</p><br />&nbsp;
+<p>或者 方法二：<br /><br />&nbsp;&lt;script type=&quot;text/javascript&quot;&gt; &nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp; &nbsp;var aImg=document.getElementById(&quot;newsp&quot;).getElementsByTagName(&#39;img&#39;);<br />&nbsp; &nbsp; &nbsp;for(var i=0;i&lt;aImg.length;i++){<br />&nbsp; &nbsp; &nbsp; aImg[i].style.height=&quot;auto&quot;;<br />&nbsp; &nbsp; &nbsp; aImg[i].style.width=&quot;auto&quot;;<br />&nbsp; &nbsp; &nbsp; }&nbsp;&nbsp; &nbsp; &nbsp;<br />&nbsp; &lt;/script&gt; &nbsp;<br />&nbsp;</p><br />&nbsp;
+<p>html更改后：<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;news_infos&quot;&nbsp;id=&quot;newsp&quot;&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;&lt;img src=&quot;images/v1.jpg&quot; style=&quot;width:100%;height:100%&quot;&gt;&lt;/p&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</p><br />100%这个方案不是很完美，如果图片上传的大小没有超过650，那么PC端图片会被放大。还有一种解决方案就是，编辑后台内容的时候，将图片属性后面的width，height值都删掉，让css来控制就行了。同样用max-width来控制图片大小，小图＜650px，图片不会被更改，＞650px，图片宽度就是650px。，那么手机端就用100%来表示。<br />&nbsp;
+<p>方法三 CSS：<br /><br />.news_infos img { max-width: 650px；height:auto; }<br /><br />@media only screen and (max-width: 480px) {<br />&nbsp; &nbsp; .news_infos img {&nbsp;width：100%;&nbsp;}<br />}</p><br />这个的不好的地方就在于，每次编辑图片属性，都得删除后面的width，比较繁琐。<br /><br />以上方法，都可以实现，但是100%，和设置宽度这两种方法都不完美， 如果以前图多，已经固定了宽度，建议使用方法二<p></p>
+        </div>
+        <div class="diggit"><a href="JavaScript:makeRequest('/e/public/digg/?classid=16&id=75&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');"> 很赞哦！ </a>(<b id="diggnum"><script type="text/javascript" src="../../e/public/ViewClick/index_classid=16&amp;id=75&amp;down=5.html"></script></b>)</div>
+        <div class="clear"></div>
+        <div class="share" id="down"><img src="../../skin/menhu/images/wx.png">          <div class="share-text">
+            <p>扫描关注青于蓝微信公众号，第一时间获取网站模板更新动态</p>
+            <p>转载请说明来源于"青于蓝排名建站"</p>
+            <p>本文地址：<a href="75.html" target="_blank">/course/web/75.html</a></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="info-pre-next">
+          <ul>
+            <li><a href="76.html"><i><em>下一篇</em><img src="../../skin/menhu/images/pic06.jpg"></i>
+              <h2>别让这些闹心的套路，毁了你的网页设计</h2>
+              <p>无限滚动的出现，终于解决了移动端上查看繁复的分类页的问题。不过与此同时，无限滚动的设计，还为我们创造了不少从未遇到的新问题。举个例子，当你要访问一个重要的页面，而它正好在长滚动页面的底部，撇开加载页面的时间和流量不谈，滚到底部去找就已经是一个很头疼的事情了。</p>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clear blank"></div>
+    <div class="otherlink whitebg">
+      <div class="news-title">
+        <h2>相关文章</h2>
+      </div>
+      <ul>
+<li><a href="80.html" title="个人博客模板《今夕何夕》后台管理文档-在线视频教程">个人博客模板《今夕何夕》后台管理文档-在线视频教程</a></li><li><a href="79.html" title="帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例">帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</a></li><li><a href="78.html" title="帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例">帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</a></li><li><a href="77.html" title="十条设计原则教你学会如何设计网页布局!">十条设计原则教你学会如何设计网页布局!</a></li><li><a href="76.html" title="别让这些闹心的套路，毁了你的网页设计">别让这些闹心的套路，毁了你的网页设计</a></li><li><a href="75.html" title="网页中图片属性固定宽度，如何用js改变大小">网页中图片属性固定宽度，如何用js改变大小</a></li><li><a href="82.html" title="企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身">企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身</a></li><li><a href="81.html" title="个人博客网站用帝国cms如何添加音乐">个人博客网站用帝国cms如何添加音乐</a></li>      </ul>
+    </div>
+    <div class="ad ad-big"><a href='http://menhu.ip3q.com/e/public/ClickAd?adid=16' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/82c0a8be75a4fa8d152cae2cdc05d1c4.jpg' border=0 width='830' height='140' alt=''></a></div>
+    <div class="pinglun-box whitebg">
+      <div class="news-title">
+        <h2>文章评论</h2>
+      </div>
+<!-- 评论 开始 -->
+<div class="pinglun">
+<div class="pl-520am" data-id="75" data-classid="16" data-showhot="0"></div>
+<script type="text/javascript" src="../../e/extend/lgyPl/api.js"></script>
+</div>
+<!-- 评论 结束 -->
+    </div>
+  </div>
+  <aside class="side-section right-box">
+    <div class="side-tab">
+      <ul id="sidetab">
+        <li class="sidetab-current">站长推荐</li>
+        <li>点击排行</li>
+      </ul>
+      <div id="sidetab-content">
+        <section>
+          <div class="tuijian">
+      <section class="topnews imgscale"><a href="80.html"><img src="../../skin/menhu/images/pic02.jpg"><span>个人博客模板《今夕何夕》后台管理文档-在线视频教程</span></a></section>
+      <ul>
+        <li><a href="79.html" title="帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例" target="_blank"><i><img src="../../skin/menhu/images/pic03.jpg"></i>
+          <p>帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</p>
+          </a></li>
+        <li><a href="78.html" title="帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例" target="_blank"><i><img src="../../skin/menhu/images/pic04.jpg"></i>
+          <p>帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</p>
+          </a></li>
+      </ul>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="paihang">
+      <section class="topnews imgscale"><a href="80.html"><img src="../../skin/menhu/images/pic02.jpg"><span>个人博客模板《今夕何夕》后台管理文档-在线视频教程</span></a></section>
+      <ul>
+        <li><i></i><a href="80.html" title="个人博客模板《今夕何夕》后台管理文档-在线视频教程" target="_blank">个人博客模板《今夕何夕》后台管理文档-在线视频教程</a></li>
+        <li><i></i><a href="79.html" title="帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例" target="_blank">帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</a></li>
+        <li><i></i><a href="77.html" title="十条设计原则教你学会如何设计网页布局!" target="_blank">十条设计原则教你学会如何设计网页布局!</a></li>
+        <li><i></i><a href="82.html" title="企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身" target="_blank">企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身</a></li>
+        <li><i></i><a href="78.html" title="帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例" target="_blank">帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</a></li>
+        <li><i></i><a href="75.html" title="网页中图片属性固定宽度，如何用js改变大小" target="_blank">网页中图片属性固定宽度，如何用js改变大小</a></li>
+        <li><i></i><a href="76.html" title="别让这些闹心的套路，毁了你的网页设计" target="_blank">别让这些闹心的套路，毁了你的网页设计</a></li>
+        <li><i></i><a href="81.html" title="个人博客网站用帝国cms如何添加音乐" target="_blank">个人博客网站用帝国cms如何添加音乐</a></li>
+      </ul>
+         </div>
+        </section>
+      </div>
+    </div>
+    <div class="ad ad-small"><a href='https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=l1qstn8f' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/d27278b3e3d7e3dabf07fcee6fc54dc1.jpg' border=0 width='320' height='132' alt=''></a></div>
+    <div class="whitebg cloud">
+      <h2 class="side-title">标签云</h2>
+      <ul>
+     <a href="../../e/tags/index_tagid=28&amp;tempid=8.html" target="_blank">前端(1)</a> <a href="../../e/tags/index_tagid=42&amp;tempid=8.html" target="_blank">搜索排名(1)</a> <a href="../../e/tags/index_tagid=2&amp;tempid=8.html" target="_blank">3(1)</a> <a href="../../e/tags/index_tagid=43&amp;tempid=8.html" target="_blank">网页设计(1)</a> <a href="../../e/tags/index_tagid=25&amp;tempid=8.html" target="_blank">北大青鸟(1)</a> <a href="../../e/tags/index_tagid=26&amp;tempid=8.html" target="_blank">培训(1)</a> <a href="../../e/tags/index_tagid=16&amp;tempid=8.html" target="_blank">生活日记(1)</a> <a href="../../e/tags/index_tagid=44&amp;tempid=8.html" target="_blank">设计原则(1)</a> <a href="../../e/tags/index_tagid=9&amp;tempid=8.html" target="_blank">收获(1)</a> <a href="../../e/tags/index_tagid=54&amp;tempid=8.html" target="_blank">建站流程(1)</a> <a href="../../e/tags/index_tagid=7&amp;tempid=8.html" target="_blank">付出才有收获(1)</a> <a href="../../e/tags/index_tagid=6&amp;tempid=8.html" target="_blank">坚定信念(1)</a> <a href="../../e/tags/index_tagid=35&amp;tempid=8.html" target="_blank">SEO(1)</a> <a href="../../e/tags/index_tagid=46&amp;tempid=8.html" target="_blank">个人博客模板(1)</a> <a href="../../e/tags/index_tagid=15&amp;tempid=8.html" target="_blank">遇见(1)</a> <a href="../../e/tags/index_tagid=20&amp;tempid=8.html" target="_blank">程序员(7)</a> <a href="../../e/tags/index_tagid=4&amp;tempid=8.html" target="_blank">匆匆4年(1)</a> <a href="../../e/tags/index_tagid=39&amp;tempid=8.html" target="_blank">程序源码(1)</a> <a href="../../e/tags/index_tagid=38&amp;tempid=8.html" target="_blank">网站制作(1)</a> <a href="../../e/tags/index_tagid=27&amp;tempid=8.html" target="_blank">女程序员(3)</a>      </ul>
+    </div>
+    <div class="clear blank"></div>
+    <div class="whitebg suiji">
+      <h2 class="side-title">猜你喜欢</h2>
+      <ul>
+                        <li><a target="_blank"  href="81.html">个人博客网站用帝国cms如何添加音乐</a></li>
+                        <li><a target="_blank"  href="77.html">十条设计原则教你学会如何设计网页布局!</a></li>
+                        <li><a target="_blank"  href="82.html">企业网站建设前期，公司该做什么样的网站？要看企业如何定位自身</a></li>
+                        <li><a target="_blank"  href="79.html">帝国cms视频教程——第二课，程序安装（云服务器搭建环境）金牛云服为例</a></li>
+                        <li><a target="_blank"  href="78.html">帝国cms视频教程——第一课，程序安装（虚拟主机安装）金牛云服为例</a></li>
+                        <li><a target="_blank"  href="75.html">网页中图片属性固定宽度，如何用js改变大小</a></li>
+                        <li><a target="_blank"  href="76.html">别让这些闹心的套路，毁了你的网页设计</a></li>
+                        <li><a target="_blank"  href="80.html">个人博客模板《今夕何夕》后台管理文档-在线视频教程</a></li>
+                  </ul>
+    </div>
+  </aside>
+</article>
+<div class="clear blank"></div>
+<footer>
+  <div class="footer box">
+    <div class="wxbox">
+      <ul>
+        <li><img src="../../skin/menhu/images/wxgzh.jpg"><span>微信公众号</span></li>
+        <li><img src="../../skin/menhu/images/wx.png"><span>我的微信</span></li>
+      </ul>
+    </div>
+    <div class="endnav">
+      <p><b>站点声明：</b></p>
+      <p>1、本站个人博客模板，均为杨青青本人设计，个人可以使用，但是未经许可不得用于任何商业目的。</p>
+      <p>2、所有文章未经授权禁止转载、摘编、复制或建立镜像，如有违反，追究法律责任。举报邮箱：<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E" target="_blank">dacesmiling@qq.com</a></p>
+      <p>Copyright © <a href="https://www.yangqq.net" target="_blank">www.yangqq.net</a> All Rights Reserved. 备案号：<a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">蜀ICP备11002373号-1</a> <a href="../../sitemap.xml" target="_blank">网站地图</a></p>
+    </div>
+  </div>
+</footer>
+<div class="toolbar-open"></div>
+<div class="toolbar">
+  <div class="toolbar-close"><span id="closed"></span></div>
+  <div class="toolbar-nav">
+    <ul id="toolbar-menu">
+      <li><i class="side-icon-user"></i>
+        <section>
+          <div class="userinfo">
+              <script src="../../e/member/login/loginjs.php.html"></script>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-qq"></i>
+        <section class="qq-section">
+          <div class="qqinfo"><a href="https://jq.qq.com/?_wv=1027&amp;k=5EH6xZg">前端设计交流群①</a><a href="https://jq.qq.com/?_wv=1027&amp;k=52fM36y">前端设计交流群②</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=476847113&amp;site=qq&amp;menu=yes">站长QQ</a></div>
+        </section>
+      </li>
+      <li><i class="side-icon-weixin"></i>
+        <section class="weixin-section">
+          <div class="weixin-info">
+            <p>个人微信扫码</p>
+<img src="../../skin/menhu/images/wx.png">            <p class="text12">工作时间</p>
+            <p class="text12">周一至周日 9:00-21:00</p>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-dashang"></i>
+        <section class="dashang-section">
+          <p>如果你觉得本站很棒，可以通过扫码支付打赏哦！</p>
+          <ul>
+            <li><img src="../../skin/menhu/images/weipayimg.jpg">微信收款码</li>
+            <li><img src="../../skin/menhu/images/alipayimg.jpg">支付宝收款码</li>
+          </ul>
+        </section>
+      </li>
+    
+    </ul>
+  </div>
+</div>
+<div class="endmenu">
+<ul>
+<li><a href="../../index.html"><i class="iconfont icon-shouye"></i>首页</a></li>
+<li><a href="../../phone-fenlei.html"><i class="iconfont icon-fenlei"></i>分类</a></li>
+<li><a href="../../phone-list.html"><i class="iconfont icon-navicon-wzgl"></i>所有</a></li>
+<li><a href="../../e/member/my/index.html"><i class="iconfont icon-My"></i>我的</a></li>
+</ul>
+</div>
+<a href="#" title="返回顶部" class="icon-top"></a>
+</body>
+</html><script src="../../e/public/onclick/index_enews=donews&amp;classid=16&amp;id=75.html"></script>

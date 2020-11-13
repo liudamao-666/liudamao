@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>html5 个人博客模板《蓝色畅想》_个人网站</title>
+<meta name="keywords" content="个人博客模板,蓝色畅想" />
+<meta name="description" content="个人博客模板《蓝色畅想》，html5+css3.文字比图片更能打动人，我一直都喜欢把文字放在前面，这一次写上了css3动画，文字不仅动起来，更能让访客的心也牵动起来。" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../../skin/menhu/css/base.css" rel="stylesheet">
+<link href="../../skin/menhu/css/m.css" rel="stylesheet">
+<script src="../../skin/menhu/js/jquery-1.8.3.min.js" ></script>
+<script src="../../skin/menhu/js/hc-sticky.js"></script>
+<script src="../../skin/menhu/js/aside-sticky.js"></script>
+<script src="../../skin/menhu/js/main.js"></script>
+<script src="../../skin/menhu/js/side-tab.js"></script>
+<!--[if lt IE 9]>
+<script src="/skin/menhu/js/modernizr.js"></script>
+<![endif]-->
+<link href="../../skin/menhu/css/picswiper.min.css" rel="stylesheet">
+<script src="../../skin/menhu/js/picswiper.min.js"></script>
+<script src="../../skin/menhu/js/picview.js"></script>
+<script type="text/javascript" src="http://menhu.ip3q.com/e/data/js/ajax.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo-section box">
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="logo"><a href="../../index.html"><img src="../../skin/menhu/images/logo.png">      <h2 class="logo-title">青于蓝</h2>
+      <p class="logo-text">排名技术建站，让你对手追赶</p>
+      </a> </div>
+  </div>
+  <div class="clear"></div>
+  <div class="topnav">
+         <h2><a href="../../index.html">青于蓝</a></h2>
+    <nav>
+      <ul id="starlist">
+        <li><a href="../../index.html">网站首页</a></li>
+    <li class="menu"><a href="../../blog/index.html" >个人博客</a>
+  <ul class="sub">  
+      <li><a href="../../blog/diary/index.html" >博客日记</a></li>
+<li><a href="../../blog/life/index.html" >程序人生</a></li>
+<li><a href="../../blog/design/index.html" >设计心得</a></li>
+<li><a href="../../blog/plan/index.html" >人生规划</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../index.html" >设计案例</a>
+  <ul class="sub">  
+      <li><a href="index.html" >个人网站</a></li>
+<li><a href="../enterprise/index.html" >企业网站</a></li>
+<li><a href="../unit/index.html" >事业单位</a></li>
+<li><a href="../shop/index.html" >网购商城</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../seo/index.html" >SEO优化</a>
+  <ul class="sub">  
+      <li><a href="../../seo/baidu/index.html" >百度SEO</a></li>
+<li><a href="../../seo/shuyu/index.html" >SEO专业术语</a></li>
+<li><a href="../../seo/problem/index.html" >SEO常见问题</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../course/index.html" >视频教程</a>
+  <ul class="sub">  
+      <li><a href="../../course/web/index.html" >前端设计</a></li>
+<li><a href="../../course/js/index.html" >JS教程</a></li>
+<li><a href="../../course/cms/index.html" >CMS教程</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../marketing/index.html" >网络营销</a>
+  <ul class="sub">  
+      <li><a href="../../marketing/extension/index.html" >网络推广</a></li>
+<li><a href="../../marketing/brand/index.html" >品牌营销</a></li>
+<li><a href="../../marketing/consciousness/index.html" >意识思维</a></li>
+    </ul><span></span></li>
+      <li class="menu"><a href="../../download/index.html" >资源下载</a>
+  <ul class="sub">  
+      <li><a href="../../download/html/index.html" >网页制作</a></li>
+<li><a href="../../download/ftp/index.html" >FTP工具</a></li>
+<li><a href="../../download/soft/index.html" >编程软件</a></li>
+<li><a href="../../download/jQuery/index.html" >jQuery插件</a></li>
+    </ul><span></span></li>
+    <li><a href="../../shop/index.html">模板商城</a></li>
+  <li><a href="../../about.html">关于我们</a></li>
+
+
+
+      </ul>
+    </nav>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+  </div>
+  <div class="is-search">
+    <section><i></i>请输入关键字词</section>
+  </div>
+  <div class="search-page">
+    <div class="go-left"></div>
+    <div class="search">
+      <form action="../../e/search/index.php.html" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="clear"></div>
+    <div class="hot-search">
+      <p>热门搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=6.html"><i>1</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>2</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>3</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>4</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>5</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>6</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>7</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>8</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>9</i>日记</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>10</i>付出才有收获</a></li>
+ 
+      </ul>
+    </div>
+    <div class="new-search">
+      <p>最新搜索排行</p>
+      <ul class="search-paihang">
+<li><a href="../../e/search/result/index_searchid=11.html"><i>1</i>源码</a></li>
+<li><a href="../../e/search/result/index_searchid=10.html"><i>2</i>耕耘</a></li>
+<li><a href="../../e/search/result/index_searchid=9.html"><i>3</i>一</a></li>
+<li><a href="../../e/search/result/index_searchid=8.html"><i>4</i>人</a></li>
+<li><a href="../../e/search/result/index_searchid=7.html"><i>5</i>个人</a></li>
+<li><a href="../../e/search/result/index_searchid=6.html"><i>6</i>收获</a></li>
+<li><a href="../../e/search/result/index_searchid=5.html"><i>7</i>付出才有收获</a></li>
+<li><a href="../../e/search/result/index_searchid=4.html"><i>8</i>企业网站</a></li>
+<li><a href="../../e/search/result/index_searchid=3.html"><i>9</i>博客</a></li>
+<li><a href="../../e/search/result/index_searchid=2.html"><i>10</i>个人博客</a></li>
+<li><a href="../../e/search/result/index_searchid=1.html"><i>11</i>日记</a></li>
+ 
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="clear blank"></div>
+<article>
+  <div class="left-box">
+    <div class="whitebg">
+      <div class="news-title"><span class="weizhi">您现在的位置是：<a href="../../index.html">首页</a>&nbsp;>&nbsp;<a href="../index.html">设计案例</a>&nbsp;>&nbsp;<a href="index.html">个人网站</a></span>
+        <h2>个人网站</h2>
+      </div>
+      <div class="picview-box">
+        <h1 class="news-title-h1">html5 个人博客模板《蓝色畅想》</h1>
+        <div class="keywords"></div>
+     <div class="picview-other"> <span class="po-date">2019-05-08</span><span class="po-classname">个人网站</span><span class="po-view"><script src=../../e/public/ViewClick/index_classid=7&amp;id=61&amp;addclick=1.html></script></span> </div>        
+        <!-- Swiper -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="https://www.yangqq.net/d/file/download/div/2018-11-11/a9de7e440cc2130713c962000b016c75.jpg"  alt=""></div></div>    
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination swiper-pagination-white"></div>
+          <!-- Add Navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <!-- Swiper end -->
+        <div class="smalltext"><i></i>个人博客模板《蓝色畅想》，html5+css3.文字比图片更能打动人，我一直都喜欢把文字放在前面，这一次写上了css3动画，文字不仅动起来，更能让访客的心也牵动起来。</div>
+        <div class="newstext">
+个人博客模板《<a href="https://www.yangqq.net/download/div/886.html#" keyword-hyperlink="">蓝色畅想</a>》，html5+css3.文字比图片更能打动人，我一直都喜欢把文字放在前面，这一次写上了css3动画，文字不仅动起来，更能让访客的心也牵动起来。<br /><br /><a href="http://bluedream.yangqq.com/" target="_blank"><u>后台带数据 预览地址</u></a><br /><br />这是一个单页面，可以写简单的自我介绍，网站介绍，或者其他的页面，尽情的自由发挥吧！<br /><br />栅栏风格排版，图片与文字的完美结合，又是一格特别的布局，让网站保持新鲜感！<br /><br />列表模板，经典的图片和文字布局。每一行间距以及图片大小，都是经过认真反复的测试再合理布局。
+<h3><a href="http://www.yangqq.com/jstt/web/910.html" target="_blank">个人博客模板《蓝色畅想》后台管理</a></h3><p></p>
+        </div>
+        <div class="diggit"><a href="JavaScript:makeRequest('/e/public/digg/?classid=7&id=61&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');"> 很赞哦！ </a>(<b id="diggnum"><script type="text/javascript" src="../../e/public/ViewClick/index_classid=7&amp;id=61&amp;down=5.html"></script></b>)</div>
+        <div class="clear"></div>
+        <div class="share" id="down"><img src="../../skin/menhu/images/wx.png">          <div class="share-text">
+            <p>扫描关注青于蓝微信公众号，第一时间获取网站模板更新动态</p>
+            <p>转载请说明来源于"青于蓝排名建站"</p>
+            <p>本文地址：<a href="61.html" target="_blank">/case/personal/61.html</a></p>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="info-pre-next">
+          <ul>
+            <li><a href="60.html"><i><em>上一篇</em><img src="../../skin/menhu/images/pic05.jpg"></i>
+              <h2>个人博客模板《show time》</h2>
+              <p>这是一个展示自我的一个博客平台，首页有幻灯，有图文，有tab栏目切换，多样式的调用，
+图片，文字结合这样一点也不单调
+</p>
+              </a></li>
+            <li><a href="62.html"><i><em>上一篇</em><img src="../../skin/menhu/images/pic03.jpg"></i>
+              <h2>html5个人博客模板《绅士》</h2>
+              <p>个人博客模板主题《绅士》,搭配灵感来源于站长袁志蒙的个人博客,多骨鱼博客主要参考了其布局.html5+css3,手机导航栏使用了js.代码精简.首页重点突出图片展示区域,以及图文</p>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clear blank"></div>
+    <div class="otherlink whitebg">
+      <div class="news-title">
+        <h2>相关文章</h2>
+      </div>
+      <ul>
+<li><a href="63.html" title="宝宝个人博客模板-亲子博客模板-宝宝个人网站模板">宝宝个人博客模板-亲子博客模板-宝宝个人网站模板</a></li><li><a href="62.html" title="html5个人博客模板《绅士》">html5个人博客模板《绅士》</a></li><li><a href="60.html" title="个人博客模板《show time》">个人博客模板《show time》</a></li><li><a href="59.html" title="html5古典个人博客模板《青砖屋檐》">html5古典个人博客模板《青砖屋檐》</a></li><li><a href="58.html" title="html5个人博客模板《More》">html5个人博客模板《More》</a></li><li><a href="57.html" title="个人博客模板《早安》">个人博客模板《早安》</a></li><li><a href="56.html" title="html5个人博客模板《繁花》">html5个人博客模板《繁花》</a></li><li><a href="55.html" title="纯文字个人博客模板《时尚黑》">纯文字个人博客模板《时尚黑》</a></li><li><a href="54.html" title="Green绿色小清新的夏天-个人博客模板">Green绿色小清新的夏天-个人博客模板</a></li>      </ul>
+    </div>
+    <div class="ad ad-big"><a href='http://menhu.ip3q.com/e/public/ClickAd?adid=16' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/82c0a8be75a4fa8d152cae2cdc05d1c4.jpg' border=0 width='830' height='140' alt=''></a></div>
+    <div class="pinglun-box whitebg">
+      <div class="news-title">
+        <h2>文章评论</h2>
+      </div>
+<!-- 评论 开始 -->
+<div class="pinglun">
+<div class="pl-520am" data-id="61" data-classid="7" data-showhot="0"></div>
+<script type="text/javascript" src="../../e/extend/lgyPl/api.js"></script>
+</div>
+<!-- 评论 结束 -->
+    </div>
+  </div>
+  <aside class="side-section right-box">
+    <div class="side-tab">
+      <ul id="sidetab">
+        <li class="sidetab-current">站长推荐</li>
+        <li>点击排行</li>
+      </ul>
+      <div id="sidetab-content">
+        <section>
+          <div class="tuijian">
+      <section class="topnews imgscale"><a href="64.html"><img src="../../skin/menhu/images/pic01.jpg"><span>《今夕何夕》Html5响应式个人博客网站模板</span></a></section>
+      <ul>
+        <li><a href="18.html" title="执子之手 将子拖走—个人网站模板" target="_blank"><i><img src="https://www.yangqq.net/d/file/download/div/2013-06-12/bb93e9aed17e3c4650b0ada2b8e3a108.jpg"></i>
+          <p>执子之手 将子拖走—个人网站模板</p>
+          </a></li>
+      </ul>
+          </div>
+        </section>
+        <section>
+          <div class="paihang">
+      <section class="topnews imgscale"><a href="64.html"><img src="../../skin/menhu/images/pic01.jpg"><span>《今夕何夕》Html5响应式个人博客网站模板</span></a></section>
+      <ul>
+        <li><i></i><a href="64.html" title="《今夕何夕》Html5响应式个人博客网站模板" target="_blank">《今夕何夕》Html5响应式个人博客网站模板</a></li>
+        <li><i></i><a href="63.html" title="宝宝个人博客模板-亲子博客模板-宝宝个人网站模板" target="_blank">宝宝个人博客模板-亲子博客模板-宝宝个人网站模板</a></li>
+        <li><i></i><a href="59.html" title="html5古典个人博客模板《青砖屋檐》" target="_blank">html5古典个人博客模板《青砖屋檐》</a></li>
+        <li><i></i><a href="2019-05-04/17.html" title="心若向阳 无畏悲伤—个人网站模板" target="_blank">心若向阳 无畏悲伤—个人网站模板</a></li>
+        <li><i></i><a href="62.html" title="html5个人博客模板《绅士》" target="_blank">html5个人博客模板《绅士》</a></li>
+        <li><i></i><a href="61.html" title="html5 个人博客模板《蓝色畅想》" target="_blank">html5 个人博客模板《蓝色畅想》</a></li>
+        <li><i></i><a href="60.html" title="个人博客模板《show time》" target="_blank">个人博客模板《show time》</a></li>
+        <li><i></i><a href="55.html" title="纯文字个人博客模板《时尚黑》" target="_blank">纯文字个人博客模板《时尚黑》</a></li>
+      </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="ad ad-small"><a href='https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=l1qstn8f' target=_blank><img src='http://menhu.ip3q.com/d/file/p/2019/05-11/d27278b3e3d7e3dabf07fcee6fc54dc1.jpg' border=0 width='320' height='132' alt=''></a></div>
+    <div class="whitebg cloud">
+      <h2 class="side-title">标签云</h2>
+      <ul>
+     <a href="../../e/tags/index_tagid=17&amp;tempid=8.html" target="_blank">毕业(2)</a> <a href="../../e/tags/index_tagid=31&amp;tempid=8.html" target="_blank">如何发展(1)</a> <a href="../../e/tags/index_tagid=6&amp;tempid=8.html" target="_blank">坚定信念(1)</a> <a href="../../e/tags/index_tagid=60&amp;tempid=8.html" target="_blank">网易博客(1)</a> <a href="../../e/tags/index_tagid=54&amp;tempid=8.html" target="_blank">建站流程(1)</a> <a href="../../e/tags/index_tagid=4&amp;tempid=8.html" target="_blank">匆匆4年(1)</a> <a href="../../e/tags/index_tagid=18&amp;tempid=8.html" target="_blank">雨天(1)</a> <a href="../../e/tags/index_tagid=33&amp;tempid=8.html" target="_blank">外包(1)</a> <a href="../../e/tags/index_tagid=9&amp;tempid=8.html" target="_blank">收获(1)</a> <a href="../../e/tags/index_tagid=58&amp;tempid=8.html" target="_blank">如何定位(1)</a> <a href="../../e/tags/index_tagid=42&amp;tempid=8.html" target="_blank">搜索排名(1)</a> <a href="../../e/tags/index_tagid=44&amp;tempid=8.html" target="_blank">设计原则(1)</a> <a href="../../e/tags/index_tagid=8&amp;tempid=8.html" target="_blank">付出(1)</a> <a href="../../e/tags/index_tagid=45&amp;tempid=8.html" target="_blank">网页布局(1)</a> <a href="../../e/tags/index_tagid=30&amp;tempid=8.html" target="_blank">职业生涯(1)</a> <a href="../../e/tags/index_tagid=10&amp;tempid=8.html" target="_blank">个人博客(5)</a> <a href="../../e/tags/index_tagid=25&amp;tempid=8.html" target="_blank">北大青鸟(1)</a> <a href="../../e/tags/index_tagid=24&amp;tempid=8.html" target="_blank">原则(1)</a> <a href="../../e/tags/index_tagid=52&amp;tempid=8.html" target="_blank">企业网站(10)</a> <a href="../../e/tags/index_tagid=27&amp;tempid=8.html" target="_blank">女程序员(3)</a>      </ul>
+    </div>
+    <div class="clear blank"></div>
+    <div class="whitebg suiji">
+      <h2 class="side-title">猜你喜欢</h2>
+      <ul>
+                        <li><a target="_blank"  href="53.html">Wedding-婚礼主题、情人节网站模板</a></li>
+                        <li><a target="_blank"  href="49.html">有一种思念，是淡淡的幸福—个人网站模板</a></li>
+                        <li><a target="_blank"  href="18.html">执子之手 将子拖走—个人网站模板</a></li>
+                        <li><a target="_blank"  href="64.html">《今夕何夕》Html5响应式个人博客网站模板</a></li>
+                        <li><a target="_blank"  href="51.html">时间煮雨-个人网站模板</a></li>
+                        <li><a target="_blank"  href="2019-05-04/17.html">心若向阳 无畏悲伤—个人网站模板</a></li>
+                        <li><a target="_blank"  href="54.html">Green绿色小清新的夏天-个人博客模板</a></li>
+                        <li><a target="_blank"  href="60.html">个人博客模板《show time》</a></li>
+                        <li><a target="_blank"  href="61.html">html5 个人博客模板《蓝色畅想》</a></li>
+                        <li><a target="_blank"  href="56.html">html5个人博客模板《繁花》</a></li>
+                  </ul>
+    </div>
+  </aside>
+</article>
+<div class="clear blank"></div>
+<footer>
+  <div class="footer box">
+    <div class="wxbox">
+      <ul>
+        <li><img src="../../skin/menhu/images/wxgzh.jpg"><span>微信公众号</span></li>
+        <li><img src="../../skin/menhu/images/wx.png"><span>我的微信</span></li>
+      </ul>
+    </div>
+    <div class="endnav">
+      <p><b>站点声明：</b></p>
+      <p>1、本站个人博客模板，均为杨青青本人设计，个人可以使用，但是未经许可不得用于任何商业目的。</p>
+      <p>2、所有文章未经授权禁止转载、摘编、复制或建立镜像，如有违反，追究法律责任。举报邮箱：<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E" target="_blank">dacesmiling@qq.com</a></p>
+      <p>Copyright © <a href="https://www.yangqq.net" target="_blank">www.yangqq.net</a> All Rights Reserved. 备案号：<a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">蜀ICP备11002373号-1</a> <a href="../../sitemap.xml" target="_blank">网站地图</a></p>
+    </div>
+  </div>
+</footer>
+<div class="toolbar-open"></div>
+<div class="toolbar">
+  <div class="toolbar-close"><span id="closed"></span></div>
+  <div class="toolbar-nav">
+    <ul id="toolbar-menu">
+      <li><i class="side-icon-user"></i>
+        <section>
+          <div class="userinfo">
+              <script src="../../e/member/login/loginjs.php.html"></script>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-qq"></i>
+        <section class="qq-section">
+          <div class="qqinfo"><a href="https://jq.qq.com/?_wv=1027&amp;k=5EH6xZg">前端设计交流群①</a><a href="https://jq.qq.com/?_wv=1027&amp;k=52fM36y">前端设计交流群②</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=476847113&amp;site=qq&amp;menu=yes">站长QQ</a></div>
+        </section>
+      </li>
+      <li><i class="side-icon-weixin"></i>
+        <section class="weixin-section">
+          <div class="weixin-info">
+            <p>个人微信扫码</p>
+<img src="../../skin/menhu/images/wx.png">            <p class="text12">工作时间</p>
+            <p class="text12">周一至周日 9:00-21:00</p>
+          </div>
+        </section>
+      </li>
+      <li><i class="side-icon-dashang"></i>
+        <section class="dashang-section">
+          <p>如果你觉得本站很棒，可以通过扫码支付打赏哦！</p>
+          <ul>
+            <li><img src="../../skin/menhu/images/weipayimg.jpg">微信收款码</li>
+            <li><img src="../../skin/menhu/images/alipayimg.jpg">支付宝收款码</li>
+          </ul>
+        </section>
+      </li>
+    
+    </ul>
+  </div>
+</div>
+<div class="endmenu">
+<ul>
+<li><a href="../../index.html"><i class="iconfont icon-shouye"></i>首页</a></li>
+<li><a href="../../phone-fenlei.html"><i class="iconfont icon-fenlei"></i>分类</a></li>
+<li><a href="../../phone-list.html"><i class="iconfont icon-navicon-wzgl"></i>所有</a></li>
+<li><a href="../../e/member/my/index.html"><i class="iconfont icon-My"></i>我的</a></li>
+</ul>
+</div>
+<a href="#" title="返回顶部" class="icon-top"></a>
+</body>
+</html><script src="../../e/public/onclick/index_enews=donews&amp;classid=7&amp;id=61.html"></script>
