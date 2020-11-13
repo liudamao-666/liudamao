@@ -1,0 +1,66 @@
+@charset "utf-8";
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+.navbox { width: 96% }
+#starlist li a { padding: 0 10px; }
+#starlist li.menu:before { right: 0 }
+.box, article { width: 96% }
+.fader .slide img { height: 320px }
+.picnews{ width:70%}
+.container{ width:66%}
+.lxtext{ width:40%}
+}
+@media screen and (max-width: 1023px) {
+/*header*/
+header { position: fixed; z-index: 999 }
+nav { width: 100%; height: auto; background: rgba(0,0,0,0.5); margin-top: 18px; position: fixed; z-index: 999; top: 42px; }
+.box, article { width: 96% }
+.picnews{ width:100%}
+.container{ width:100%}
+
+.lxtext{ width:40%}
+#mnavh { overflow: hidden; position: absolute; }
+#mnavh {display: block;right: 0;}
+#starlist {display: none;width: 100%;/* top: 30px; */}
+#starlist li {width: 55%;text-align: center;background: #ffffff;float: none;display: block;font-weight: bold;}
+#starlist li:last-child { padding-bottom: 100% }
+#starlist li a {display: block;width: 100%;text-align: center;float: none;padding: 0;border-bottom: #d4d4d4 1px solid;margin: 0;}
+#starlist ul.sub { display: block; position: inherit; left: inherit; top: inherit; }
+.menu:hover{ display:inherit}
+#starlist ul.sub li { width: 100% }
+#starlist ul.sub li:last-child {padding-bottom: 0;border-bottom: #ddd 1px solid;}
+#starlist ul.sub li a {font-weight: normal;border-bottom: none;}
+#starlist ul.sub li a:hover, #starlist li:hover a, #starlist #selected {color: #404040;}
+.menu span {display: block;height: 60px;opacity: 0.5;position: absolute;top: 0;right: 0;border-left: #ddd 1px solid;}
+.menu:before { right: 20px; }
+.right_box{ display:none}
+}
+ @media only screen and (max-width: 768px) {
+.banner { width: 200% }
+.fader { left: -26%; }
+
+}
+ @media only screen and (max-width: 480px) {
+.lxtext{ width:100%; }
+.lxweixin{ width:100%; float:none; text-align:center; }
+.lxweixin li{ float:none; display:inline-block}
+.lxweixin li img{ margin-top:30px}
+.notice .tab-hd li{ width:30%}
+.about_img{ float:none; margin:auto}
+h3.about_title{ text-align:center}
+.news ul li{ width:100%}
+.subnav li{    width: 30%;
+    margin: 0;}
+.subnav li a{ padding:0;}
+.image-list i{ width:50%}
+.jj_img{ width:100%; margin-bottom:10px}
+.picnews li p{ display:none}
+.picnews li h2{ font-size:18px; padding-top:20px}
+.nextinfo li{ width:90%; margin-bottom:10px}
+.nextinfo li:last-child{ float:left}
+h1.con_title{ margin:20px}
+.place{ margin-left:10px}
+   a.about_more{ float:none}
+   .news ul li i{width:25%}
+   p.xminfo{padding:0 20px}
+   #pictureViewer > .content{ width:100%}
+}
