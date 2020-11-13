@@ -1,0 +1,70 @@
+@charset "utf-8";
+/**
+ * base.css
+ * https://www.yangqq.com/
+ * Copyright 2020, design by yangqq
+ */
+ 
+@media screen and (min-width: 1120px) and (max-width: 1200px) {
+article, .topbar ul, .box { width: 1090px }
+.box_l { margin: 0 20px 20px; width: 620px; }
+.banner { height: auto }
+.box_r { width: 320px }
+}
+@media screen and (min-width: 1020px) and (max-width:1119px) {
+article, .topbar ul, .box { width: 990px }
+.box_l { margin: 0 15px 20px; }
+.banner { height: auto }
+.box_r { width: 300px }
+}
+ @media screen and (min-width: 960px) and (max-width:1019px) {
+article, .topbar ul, .box { width: 940px }
+.box_l { margin: 0 15px 20px; }
+.banner { height: auto }
+.box_r { width: 280px }
+}
+ @media screen and (max-width: 959px) {
+.topbar ul, .box { width: 98% }
+article { width: 100% }
+.topbar { margin-bottom: 0 }
+.logo { display: inline-block; float: left; margin: 5px 20px 0; }
+.logo img { }
+nav { width: 100%; margin-bottom: 20px; box-shadow: 0px 3px 10px 1px rgba(144, 161, 180, 0.4); }
+ul#starlist { height: 40px; }
+nav span { display: none }
+nav ul li { display: inline-block; margin-bottom: 0 }
+nav ul li a { margin: 0 10px; text-align: center }
+nav ul li a#selected, nav ul li a:hover { color: #ed4040; background: none; position: relative; }
+nav ul li a#selected:after { position: absolute; content: ""; width: 100%; height: 2px; background: #ed4040; bottom: 0px; left: 0; }
+.is-fixed { width: 100%; background: #fff; box-shadow: 0px 3px 10px 1px rgba(205, 205, 205, 0.4); left: 0; top: 0; }
+.box_l {width: 62%;margin: 0 0 0 10px;}
+.banner { height: auto }
+.box_r { width: 33%; margin-right:10px }
+.search input.input_submit { background: url(../images/searchm.png) no-repeat left 2px center; }
+}
+@media screen and (max-width: 768px) {
+nav { overflow-x: auto; }
+.topnav { width: 1000px; overflow-x: auto; }
+ul#starlist { }
+}
+ @media screen and (max-width: 640px) {
+.box_l { width: 96%; margin: auto; float: none }
+.box_r { width: 96%; margin: auto; float: none }
+.search { display: none }
+.box_r section { display: none }
+.box_r section:last-child { display: block }
+.logo { margin: 12px 8px 0 5px; }
+.logo img { height: 16px; }
+nav ul li a { margin: 0 4px; }
+.topbar img { right: 0; left: -25px; }
+.news_list li i { width: 90px; height: 60px; margin-bottom: 10px; margin-right: 10px; }
+.news_list_info { display: none }
+.news_list li h2 { font-size: 15px; margin: 7px 0 0; white-space: initial; }
+.news_list_time { clear: both }
+.news_list li { margin-bottom: 10px; padding-bottom: 10px; }
+.copyright { text-align: center }
+.container h1 { font-size: 18px; }
+.content { margin: 0 8px }
+.content p { margin: 15px 0; }
+.container { font-size: 15px; }
+}
