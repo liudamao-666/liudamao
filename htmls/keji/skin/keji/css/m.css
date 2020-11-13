@@ -1,0 +1,139 @@
+ @charset "utf-8";
+/**
+ * base.css
+ * https://www.yangqq.com/
+ * Copyright 2019, design by yangqq
+ */
+
+@media only screen and (min-width: 1200px) and (max-width: 1630px) {
+.box { width: 1200px }
+#starlist li a { padding: 0 10px }
+#starlist li { margin-right: 0 }
+.logo { left: 10px }
+.section.icon-search.current .search { left: auto; right: 10px; }
+}
+@media only screen and (max-width: 1200px) {
+.box { width: 100% }
+header { height: 60px; }
+.topnav { position: fixed; top: 0; z-index: 0; background: rgba(0,0,0,.6); height: auto; }
+nav #starlist { width: 100%; margin-top: 60px; }
+#mnavh { display: block; top: 0; position: absolute; left: 0; padding-top: 10px; }
+#starlist { display: none }
+#starlist li { width: 60%; margin: 0; background: #fff; border-bottom: #eee 10px solid; line-height: 50px; float: left; font-size: 16px; }
+#starlist li a:hover, #starlist #selected, .selected > a, #starlist li:hover { color: #d61a1a; background: #fff; }
+#starlist li a { text-align: left; text-indent: 2em; color: #000; width: 100%; padding: 0; }
+#starlist ul.sub { background: none; width: 100%; display: block; position: initial; padding: 0; opacity: 1; transition: none; }
+#starlist ul.sub:before { display: none }
+#starlist ul.sub li { border-bottom: none; width: 100%; overflow: hidden; line-height: 40px !important; border-top: none; height: 40px !important; background: none; font-size: 14px; }
+#starlist ul.sub li:first-child { border-top: #eee 1px solid; }
+#starlist ul.sub li a { display: block; padding-left: 10px; text-indent: 3em; }
+#starlist ul.sub li:hover a, #starlist li:hover a { background: none }
+#starlist ul.sub li #selected { color: #000 !important }
+.menu:after { width: 26px; height: 22px; content: ""; background: url("../images/jiantou.png") no-repeat; background-size: 16px; display: block; }
+.menu span { display: block; ; position: absolute; width: 50px; height: 50px; background: #fff; top: 0; right: 0; border-left: #eee 1px solid; }
+#starlist li:last-child { padding-bottom: 100%; }
+#starlist ul.sub li:last-child { padding-bottom: 0 }
+.logo img { height: 40px; margin-top: 10px; }
+.logo {/* top: -16px; */ }
+.icon-box { top: 10px; }
+nav { line-height: 40px; width: 100% }
+#starlist li:hover ul.sub:before { display: none }
+.about.box { padding: 40px 00; }
+}
+@media only screen and (max-width: 768px) {
+.about-text { overflow: hidden; padding-top: 0; }
+h2.title-ch { font-size: 30px; margin-bottom: 20px; padding-left: 10px; }
+span.title-en { font-size: 46px; }
+.about-text p:nth-child(2n-1) { display: none; }
+.about-text p { font-size: 14px }
+.about-text p { overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 4; padding: 0 10px; }
+.case-list-text h3 { margin: 30px 0 20px 0; font-size: 22px; }
+.case-list-text p { margin: 20px 10px; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3; line-height: 1.8; font-size: 16px; color: #000; }
+.newslist li { margin: 10px; }
+.newslist { margin-bottom: 30px; }
+.ban-img h3:before { display: none; }
+.ban-img h3 { font-size: 30px; width: 100%; }
+.ban-img { top: 30%; }
+}
+@media only screen and (max-width: 640px) {
+.about-img { width: 100%; }
+.about-img img { width: 100%; }
+.about-text { width: 100%; margin-top: 10px; }
+.about-text .btn-red { float: none; }
+.point li { width: 50%; }
+.point i { width: 80px; padding: 8px 0; }
+.case-list-text { width: 100%; }
+.case-list-img { width: 100%; }
+#tab li { margin-bottom: 10px; }
+.content-box li { width: 50%; margin: 0; }
+.content-box li span { padding: 6px 10px; font-size: 12px; }
+.product { padding: 20px 0; }
+.title-h2 { margin: 20px 0; }
+h2.title-h2-ch { font-size: 28px; }
+h2.title-h2-ch:before, h2.title-h2-ch:after { width: 60px; }
+h2.title-h2-ch:before { left: 0 }
+h2.title-h2-ch:after { right: 0; }
+.newslist li { padding: 10px 10px 30px 10px; }
+.newslist li i { width: 100%; height: auto; margin-bottom: 10px; }
+.newslist h3 { margin-bottom: 10px; }
+.newslist span.btn-red { float: none; }
+.logo { position: inherit; left: initial; margin: auto; width: 100%; }
+.logo img { margin: auto; height: 30px; padding-top: 5px; }
+.ft-links dl { width: 25%; }
+.copyright { padding: 10px 10px 70px; }
+footer { padding: 0; }
+.tel { display: none; }
+.news a.btn-red { display: none; }
+.sidefloat { bottom: 0; width: 100%; }
+.sidefloat li { width: 25%; float: left; }
+.sidefloat li.side_tell, .sidefloat li.side_top { border-top: 1px solid #eee; ; }
+a.side_zd { width: 100%; height: 100%; }
+.sidefloat li span { bottom: 50px; right: auto; }
+header { height: 40px; }
+#mnavh { padding-top: 0; }
+nav #starlist { margin-top: 40px; }
+.icon-box { top: 0; right: 10px; }
+.search { left: auto; right: -10px; top: 50px }
+.navicon { margin-left: 0 }
+.ft-links i { width: 60px; height: 60px; }
+.ft-links i img { width: 20px; padding: 20px 0 0 0; }
+.ft-links dt { font-size: 16px; }
+.ft-links.box { margin: 0; padding: 30px 0; width: 100%;}
+.outer-box { overflow-x: auto; }
+ul#tab { width: 800px; overflow-x: scroll; }
+#tab li { float: left; margin: 0 10px; }
+.page-title { overflow-x: auto; margin: 0 0 30px; }
+.page-title ul { width: 800px; overflow-x: scroll; }
+.page-title ul li { float: left; margin: 0 10px; }
+.text-content { padding: 0 20px; }
+.text-content h1 { font-size: 22px; }
+.text-content h2 { font-size: 18px; }
+.text-content h3 { font-size: 17px; }
+.text-content h4, .text-content h5, .text-content h6 { font-size: 16px; }
+.time-section p { padding-right: 20px; }
+.image-list .cover { width: 100%; }
+.product-detail-images { display: none; }
+.product-detail-desc { width: 100%; }
+.cp-pics { display: block; }
+.product-detail-desc h1 { font-size: 22px; margin: 20px 0; }
+.white { padding: 20px; }
+.content-box .text-content { padding: 0; }
+.context #tab { width: 100%; margin: 20px 0; }
+.product-detail #outer { }
+.context #tab li { width: 30%; margin: 0; }
+.context #tab li a { padding: 8px 0; }
+.other-product li { width: 100%; margin: 0; }
+.jj_h { font-size: 18px; font-weight: bold; }
+.product-detail .text-content { padding: 0; }
+.content-about .text-content { padding: 0; }
+.tell-tit h2 { font-size: 18px; }
+.kefu li { width: 100% }
+ul.form-sq { width: 80%; }
+#questions li h5 { border-bottom: #eee 1px solid; }
+ul.lxtext { width: 100%; }
+ul.lxweixin { width: 100%; }
+.lxweixin li { width: 50%; }
+#pictureViewer > .content {    width: 100%;    height: 400px;}
+.box {width: 90%; margin:auto}
+#questions .foldContent {padding: 10px;}
+}
