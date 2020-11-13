@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>联系我们_物流行业_企业网站模板_响应式网站模板_青于蓝排名建站</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../skin/wuliu/css/base.css" rel="stylesheet">
+<link href="../skin/wuliu/css/m.css" rel="stylesheet">
+<script src="../skin/wuliu/js/jquery-1.8.3.min.js" ></script>
+<script src="../skin/wuliu/js/comm.js"></script>
+<!--[if lt IE 9]>
+<script src="/skin/wuliu/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header id="header" class="white-bg">
+<div class="box">
+<div class="logo"><a href="../index.html"><img src="../skin/wuliu/images/logo.png" alt="物流行业_企业网站模板_响应式网站模板_青于蓝排名建站">
+</a></div>
+<nav>
+<h2 id="mnavh"><span class="navicon"></span></h2>
+<ul id="starlist">
+<li><a href="../index.html">网站首页</a></li>
+<li><a href="../about/index.html">公司简介</a></li><li><a href="../news/index.html">公司新闻</a></li><li><a href="../case/index.html">客户案例</a></li><li><a href="index.html">联系我们</a></li></ul>
+</nav>
+</div>
+</header>
+<div class="list-bg"></div>
+<div class="page-contact box">
+<div class="page-nav">您现在的位置：<a href="../index.html">首页</a>&nbsp;>&nbsp;<a href="index.html">联系我们</a></div>
+<h2 class="list-title">联系我们</h2>
+<div class="tell">
+<div class="tell-tit">
+<h2>7×8小时电话咨询： 95187-1</h2>
+<p>专业的售前团队已经做好准备，随时为您提供全面的售前服务支持！</p>
+</div>
+</div>
+<div class="kefu">
+<ul>
+<li><a><i><img src="../skin/wuliu/images/kf-qq.jpg"></i>
+<h3>微信客服</h3>
+<p>微信号：yangqq_1987</p>
+</a></li>
+<li><a><i><img src="../skin/wuliu/images/kf-wx.jpg"></i>
+<h3>QQ客服</h3>
+<p>QQ号：476847113</p>
+</a></li>
+<li><a><i><img src="../skin/wuliu/images/kf-wxgzh.jpg"></i>
+<h3>微信公众号</h3>
+<p>扫码关注青于蓝</p>
+</a></li>
+</ul>
+</div>
+
+<ul class="form-sq">
+<h2>项目咨询</h2>
+<small>专业的售前咨询团队为您提供全方位的购买咨询/配置推荐/价格方案等1对1的贴心服务</small>
+<form name="feedback" method="post" enctype="multipart/form-data" action="http://wuliu.ip3q.com/e/enews/index.php">
+<input type="hidden" name="bid" value="1">
+<input name="enews" type="hidden" value="AddFeedback">
+<li>
+<input name="title" type="text" value="" placeholder="*您的姓名">
+</li>
+<li>
+<input name="mycall" type="text" value="" placeholder="*联系电话">
+</li>
+<li>
+<input name="address" type="text" value="" placeholder="*联系地址">
+</li>
+<li>
+<textarea name="saytext" id="saytext" class="form-control form-text" rows="6" placeholder="*您想咨询的问题是什么"></textarea>
+</li>
+<span>
+<input type="submit" name="submit" value="提交">
+</span>
+<input type="hidden" name="ecmsfrom" value="/contact/">
+</form>
+</ul>
+</div>
+<footer>
+<div class="footer box">
+<ul class="ft-img">
+<li><img src="../skin/wuliu/images/wx.jpg">
+<p>微信客服</p>
+</li>
+<li><img src="../skin/wuliu/images/wxgzh.jpg">
+<p>关注微信</p>
+</li>
+</ul>
+<img src="../skin/wuliu/images/logo.png" class="end-logo">
+<ul class="end-nav">
+<li><a href="../about/index.html">公司简介</a></li><li><a href="../news/index.html">公司新闻</a></li><li><a href="../case/index.html">客户案例</a></li><li><a href="index.html">联系我们</a></li></ul>
+<p class="copyright">版权所有：<a href="../index.html">天津青于蓝科技有限公司</a> 备案号：<a href="http://www.beian.miit.gov.cn/" rel="nofollow">津ICP备19004899</a></p>
+</div>
+</footer>
+
+
+<script type="text/javascript">
+//屏蔽右键菜单
+document.oncontextmenu = function (event){
+	if(window.event){
+		event = window.event;
+	}try{
+		var the = event.srcElement;
+		if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			return false;
+		}
+		return true;
+	}catch (e){
+		return false; 
+	} 
+}
+
+//屏蔽粘贴
+document.onpaste = function (event){
+	if(window.event){
+		event = window.event;
+	}try{
+		var the = event.srcElement;
+		if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			return false;
+		}
+		return true;
+	}catch (e){
+		return false;
+	}
+}
+
+//屏蔽复制
+document.oncopy = function (event){
+	if(window.event){
+		event = window.event;
+	}try{
+		var the = event.srcElement;
+		if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			return false;
+		}
+		return true;
+	}catch (e){
+		return false;
+	}
+}
+
+//屏蔽剪切
+document.oncut = function (event){
+	if(window.event){
+		event = window.event;
+	}try{
+		var the = event.srcElement;
+		if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			return false;
+		}
+		return true;
+	}catch (e){
+		return false;
+	}
+}
+
+//屏蔽选中
+document.onselectstart = function (event){
+	if(window.event){
+		event = window.event;
+	}try{
+		var the = event.srcElement;
+		if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			return false;
+		}
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
+</script>
+
+</body>
+</html>
