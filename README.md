@@ -8,3 +8,4 @@ here is my self repo!
 - brks
 - jianzhu
 - keji
+- others
