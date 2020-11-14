@@ -1,4 +1,8 @@
 # liudamao
 溜达猫
 
-here is my sharing repo!
+here is my self repo!
+
+- menhu
+- mood
+- brks
