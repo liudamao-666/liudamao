@@ -1,5 +1,3 @@
-# liudamao
-
 here is my self repo!
 
 - menhu
